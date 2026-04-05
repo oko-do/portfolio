@@ -195,22 +195,22 @@ export const tools: Tool[] = [
   { name: "Miro", category: "collaboration", icon: "/images/tools/miro.svg" },
 ];
 
-export const clients: { name: string; logo: string }[] = [
-  { name: "ADNOC", logo: "/images/clients/adnoc.svg" },
-  { name: "Alcon", logo: "/images/clients/alcon.svg" },
-  { name: "Bacardi", logo: "/images/clients/bacardi.svg" },
-  { name: "Coursera", logo: "/images/clients/coursera.svg" },
-  { name: "Goethe Institute", logo: "/images/clients/goethe.svg" },
-  { name: "Google", logo: "/images/clients/google.svg" },
-  { name: "McKesson", logo: "/images/clients/mckesson.svg" },
-  { name: "Sonifi", logo: "/images/clients/sonifi.svg" },
+export const clients: { name: string; logo: string; url: string }[] = [
+  { name: "ADNOC", logo: "/images/clients/adnoc.svg", url: "https://www.adnoc.ae/" },
+  { name: "Alcon", logo: "/images/clients/alcon.svg", url: "https://www.alcon.com/" },
+  { name: "Bacardi", logo: "/images/clients/bacardi.svg", url: "https://www.bacardi.com/" },
+  { name: "Coursera", logo: "/images/clients/coursera.svg", url: "https://coursera.org/" },
+  { name: "Goethe Institute", logo: "/images/clients/goethe.svg", url: "https://www.goethe.de/en/index.html" },
+  { name: "Google", logo: "/images/clients/google.svg", url: "https://abc.xyz/" },
+  { name: "McKesson", logo: "/images/clients/mckesson.svg", url: "https://www.mckesson.com/" },
+  { name: "Sonifi", logo: "/images/clients/sonifi.svg", url: "https://www.sonifi.com/" },
 ];
 
 export const about = {
   name: "Konstantin Dolgov",
   role: {
     en: "Senior+ / Lead Product Designer",
-    ru: "Senior+ / Ведущий продуктовый дизайнер",
+    ru: "Senior продуктовый дизайнер",
   },
   location: {
     en: "Hamburg, Germany",
