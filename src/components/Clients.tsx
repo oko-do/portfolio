@@ -5,7 +5,7 @@ import { useRef, useEffect, useCallback } from "react";
 import { clients } from "@/lib/portfolio-data";
 import { FadeIn } from "./FadeIn";
 
-const BASE_SPEED = 0.5; // px per frame
+const BASE_SPEED = 0.3; // px per frame
 
 // Split clients into two rows
 const row1 = clients.filter((_, i) => i % 2 === 0); // ADNOC, Bacardi, Goethe, McKesson
