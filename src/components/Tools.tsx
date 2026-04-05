@@ -1,31 +1,9 @@
 "use client";
 
+/* eslint-disable @next/next/no-img-element */
 import { useTranslations } from "next-intl";
 import { tools } from "@/lib/portfolio-data";
 import { FadeIn } from "./FadeIn";
-
-function ToolIcon({ name }: { name: string }) {
-  const iconMap: Record<string, string> = {
-    Figma: "Fi",
-    Photoshop: "Ps",
-    Illustrator: "Ai",
-    "After Effects": "Ae",
-    ProtoPie: "Pp",
-    Framer: "Fr",
-    Miro: "Mi",
-    FigJam: "Fj",
-    Notion: "No",
-    "Cinema 4D": "C4",
-    Cursor: "Cu",
-    Claude: "Cl",
-  };
-
-  return (
-    <span className="text-xs font-mono text-primary font-medium">
-      {iconMap[name] || name.slice(0, 2)}
-    </span>
-  );
-}
 
 export default function Tools() {
   const t = useTranslations("Tools");
@@ -49,8 +27,12 @@ export default function Tools() {
                 key={tool.name}
                 className="flex flex-col items-center gap-3 p-4 rounded-lg hover:bg-secondary/50 transition-colors group"
               >
-                <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center">
-                  <ToolIcon name={tool.name} />
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center">
+                  <img
+                    src={tool.icon}
+                    alt={tool.name}
+                    className="w-8 h-8 object-contain"
+                  />
                 </div>
                 <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors text-center">
                   {tool.name}

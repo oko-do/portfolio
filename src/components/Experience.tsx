@@ -1,19 +1,27 @@
 "use client";
 
+import { useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { experience } from "@/lib/portfolio-data";
 import { FadeIn } from "./FadeIn";
+import { motion, AnimatePresence } from "framer-motion";
+/* eslint-disable @next/next/no-img-element */
 
 export default function Experience() {
   const t = useTranslations("Experience");
   const locale = useLocale() as "en" | "ru";
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggle = (index: number) => {
+    setOpenIndex((prev) => (prev === index ? null : index));
+  };
 
   return (
     <section
       id="experience"
       className="px-6 md:px-12 lg:px-24 py-20 border-t border-border"
     >
-      <div className="max-w-4xl">
+      <div className="max-w-5xl">
         <FadeIn>
           <h2 className="text-sm text-muted-foreground uppercase tracking-wide mb-8">
             {t("title")}
@@ -21,24 +29,101 @@ export default function Experience() {
         </FadeIn>
 
         <div className="space-y-0">
-          {experience.map((job, index) => (
-            <FadeIn key={`${job.company}-${index}`} delay={index * 0.05}>
-              <div className="flex flex-col md:flex-row md:items-center justify-between py-4 border-b border-border group">
-                <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-4">
-                  <span className="text-foreground font-medium">
-                    {job.company}
-                  </span>
-                  <span className="text-muted-foreground">
-                    {job.role[locale]}
-                  </span>
-                </div>
+          {experience.map((job, index) => {
+            const isOpen = openIndex === index;
 
-                <span className="text-muted-foreground text-sm mt-1 md:mt-0">
-                  {job.period[locale]}
-                </span>
-              </div>
-            </FadeIn>
-          ))}
+            return (
+              <FadeIn key={`${job.company}-${index}`} delay={index * 0.05}>
+                <div className="border-b border-border">
+                  {/* Collapsed row — clickable header */}
+                  <button
+                    type="button"
+                    onClick={() => toggle(index)}
+                    className="w-full text-left py-4 flex items-center justify-between gap-4 group cursor-pointer"
+                  >
+                    <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-4">
+                      <span className="text-foreground font-medium">
+                        {job.company}
+                      </span>
+                      <span className="text-muted-foreground">
+                        {job.roles[0].role[locale]}
+                      </span>
+                    </div>
+
+                    <div className="flex items-center gap-3">
+                      <span className="text-foreground text-sm whitespace-nowrap">
+                        {job.roles[0].period[locale]}
+                      </span>
+                      <motion.svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        animate={{ rotate: isOpen ? 180 : 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="text-muted-foreground shrink-0"
+                      >
+                        <path
+                          d="M4 6L8 10L12 6"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </motion.svg>
+                    </div>
+                  </button>
+
+                  {/* Expanded content */}
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pb-6 pt-2 grid grid-cols-1 md:grid-cols-[240px_1fr] gap-6 md:gap-8">
+                          {/* Left column: logo + description */}
+                          <div className="flex flex-col gap-3">
+                            {job.logo && (
+                              <img
+                                src={job.logo}
+                                alt={`${job.company} logo`}
+                                className="h-6 w-auto object-contain self-start"
+                              />
+                            )}
+                            <p className="text-muted-foreground text-sm leading-relaxed">
+                              {job.description[locale]}
+                            </p>
+                          </div>
+
+                          {/* Right column: tasks */}
+                          <div>
+                            <ul className="space-y-2">
+                              {job.tasks[locale].map((task, i) => (
+                                <li
+                                  key={i}
+                                  className="text-foreground text-sm leading-relaxed flex gap-2"
+                                >
+                                  <span className="text-muted-foreground mt-1.5 shrink-0">
+                                    ·
+                                  </span>
+                                  <span>{task}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </FadeIn>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -12,7 +12,14 @@
   },
   "About": {
     "title": "About",
-    "bio": "I'm a product designer who thrives on complexity. For over 6 years, I've been transforming intricate B2B and enterprise systems into intuitive experiences. My approach combines deep user research with systematic design thinking to create products that people actually want to use."
+    "bio": "I'm a product designer who thrives on complexity. For over 6 years, I've been transforming intricate B2B and enterprise systems into intuitive experiences. My approach combines deep user research with systematic design thinking to create products that people actually want to use.",
+    "experienceLabel": ".experience",
+    "experienceValue": "6+ years",
+    "locationLabel": ".location",
+    "locationValue": "Hamburg",
+    "freelanceLabel": ".freelance",
+    "freelanceValue": "Available",
+    "helloLabel": ".hello"
   },
   "Experience": {
     "title": "Experience"

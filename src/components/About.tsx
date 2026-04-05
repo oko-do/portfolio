@@ -1,13 +1,12 @@
 "use client";
 
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/badge";
 import { about } from "@/lib/portfolio-data";
 import { FadeIn } from "./FadeIn";
 
 export default function About() {
   const t = useTranslations("About");
-  const locale = useLocale() as "en" | "ru";
 
   return (
     <section
