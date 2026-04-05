@@ -1,0 +1,53 @@
+{
+  "Header": {
+    "about": "About",
+    "experience": "Experience",
+    "work": "Work",
+    "contacts": "Contact",
+    "downloadCV": "Download CV"
+  },
+  "Hero": {
+    "viewCases": "View Cases",
+    "downloadCV": "Download CV"
+  },
+  "About": {
+    "title": "About",
+    "bio": "I'm a product designer who thrives on complexity. For over 6 years, I've been transforming intricate B2B and enterprise systems into intuitive experiences. My approach combines deep user research with systematic design thinking to create products that people actually want to use."
+  },
+  "Experience": {
+    "title": "Experience"
+  },
+  "Tools": {
+    "title": "Tools"
+  },
+  "Clients": {
+    "title": "Clients"
+  },
+  "Cases": {
+    "title": "Selected Work"
+  },
+  "Contacts": {
+    "title": "Contact",
+    "cta": "If you would like to discuss a project or just say hi, I'm always open to chat.",
+    "sendEmail": "Send Email",
+    "downloadCV": "Download CV",
+    "email": "Email",
+    "telegram": "Telegram",
+    "linkedin": "LinkedIn"
+  },
+  "Footer": {
+    "location": "Hamburg, Germany"
+  },
+  "CasePage": {
+    "backToProjects": "Back to Projects",
+    "role": "Role",
+    "team": "Team",
+    "year": "Year",
+    "previousProject": "Previous",
+    "nextProject": "Next",
+    "getInTouch": "Interested in working together?",
+    "contactCta": "Let's discuss your project and see how I can help.",
+    "contactButton": "Get in Touch",
+    "viewMoreProjects": "View More Projects"
+  }
+}
