@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Lock, Eye, EyeOff } from "lucide-react";
+import { Lock, Eye, EyeOff, ArrowLeft } from "lucide-react";
+import { useRouter } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 
 interface NdaModalProps {
@@ -13,6 +14,7 @@ interface NdaModalProps {
     placeholder: string;
     submit: string;
     error: string;
+    back: string;
   };
   children: React.ReactNode;
 }
@@ -44,6 +46,7 @@ export function NdaModal({ slug, translations, children }: NdaModalProps) {
   const [error, setError] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+  const router = useRouter();
 
   useEffect(() => {
     const unlocked = getUnlockedSlugs();
@@ -157,9 +160,27 @@ export function NdaModal({ slug, translations, children }: NdaModalProps) {
                   )}
                 </AnimatePresence>
 
-                <Button type="submit" size="lg" className="w-full">
-                  {translations.submit}
-                </Button>
+                <div className="flex items-center gap-3">
+                  <button
+                    type="button"
+                    onClick={() => router.push("/")}
+                    className="flex items-center justify-center h-12 w-12 shrink-0 rounded-lg border border-border bg-card text-muted-foreground hover:bg-white hover:text-black hover:border-white transition-colors"
+                  >
+                    <ArrowLeft className="h-5 w-5" />
+                  </button>
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className={`flex-1 min-w-0 h-12 rounded-lg ${
+                      !password
+                        ? "bg-transparent border border-border text-muted-foreground hover:bg-transparent hover:text-muted-foreground cursor-not-allowed opacity-100"
+                        : ""
+                    }`}
+                    disabled={!password}
+                  >
+                    {translations.submit}
+                  </Button>
+                </div>
               </form>
             </motion.div>
           </motion.div>

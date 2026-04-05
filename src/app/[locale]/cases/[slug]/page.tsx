@@ -235,6 +235,7 @@ export default async function ProjectPage({ params }: Props) {
           placeholder: t("ndaPasswordPlaceholder"),
           submit: t("ndaSubmit"),
           error: t("ndaError"),
+          back: t("ndaBack"),
         }}
       >
         {pageContent}

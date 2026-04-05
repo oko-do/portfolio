@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import { usePathname, useRouter } from "@/i18n/navigation";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -15,7 +16,11 @@ const navItems = [
 
 export default function Header() {
   const t = useTranslations("Header");
+  const locale = useLocale();
+  const pathname = usePathname();
+  const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const isHome = pathname === "/";
 
   useEffect(() => {
     if (mobileMenuOpen) {
@@ -32,10 +37,14 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
       <nav className="px-6 md:px-12 lg:px-24 py-4 flex items-center justify-between">
         <a
-          href="#"
+          href={`/${locale}`}
           onClick={(e) => {
             e.preventDefault();
-            window.scrollTo({ top: 0, behavior: "smooth" });
+            if (isHome) {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            } else {
+              router.push("/");
+            }
           }}
           className="text-foreground font-medium hover:text-primary transition-colors cursor-pointer"
         >

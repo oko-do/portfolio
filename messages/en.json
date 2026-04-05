@@ -61,6 +61,7 @@
     "ndaPasswordPlaceholder": "Enter password",
     "ndaSubmit": "Unlock",
     "ndaError": "Incorrect password. Please try again.",
+    "ndaBack": "Back",
     "ndaBadge": "NDA"
   }
 }
