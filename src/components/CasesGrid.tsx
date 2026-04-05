@@ -1,7 +1,7 @@
 "use client";
 
 import { Link } from "@/i18n/navigation";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Lock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { FadeIn } from "./FadeIn";
 
@@ -14,6 +14,7 @@ interface ProjectData {
   year: string;
   gradient: string;
   award?: string;
+  protected?: boolean;
 }
 
 export function CasesGrid({ projects }: { projects: ProjectData[] }) {
@@ -32,6 +33,12 @@ export function CasesGrid({ projects }: { projects: ProjectData[] }) {
                     {project.client}
                   </span>
                 </div>
+                {project.protected && (
+                  <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-background/80 backdrop-blur-sm border border-border">
+                    <Lock className="h-3 w-3 text-muted-foreground" />
+                    <span className="text-xs font-medium text-muted-foreground">NDA</span>
+                  </div>
+                )}
               </div>
 
               <div className="p-6 flex flex-col">

@@ -16,6 +16,7 @@ export default async function Cases() {
     year: p.frontmatter.year,
     gradient: p.frontmatter.gradient,
     award: p.frontmatter.award,
+    protected: p.frontmatter.protected,
   }));
 
   return (

@@ -16,6 +16,7 @@ export interface ProjectFrontmatter {
   team?: string;
   award?: string;
   published: boolean;
+  protected?: boolean;
   order: number;
 }
 

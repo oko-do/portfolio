@@ -12,6 +12,7 @@ import { mdxComponents } from "@/components/mdx/mdx-content";
 import { compileMDX } from "next-mdx-remote/rsc";
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
+import { NdaModal } from "@/components/NdaModal";
 import type { Metadata } from "next";
 
 interface Props {
@@ -66,7 +67,9 @@ export default async function ProjectPage({ params }: Props) {
 
   const { frontmatter } = project;
 
-  return (
+  const isProtected = frontmatter.protected === true;
+
+  const pageContent = (
     <div className="min-h-screen bg-background">
       {/* Header */}
       <div className="px-6 md:px-12 lg:px-24 py-6 border-b border-border">
@@ -221,4 +224,23 @@ export default async function ProjectPage({ params }: Props) {
       </section>
     </div>
   );
+
+  if (isProtected) {
+    return (
+      <NdaModal
+        slug={slug}
+        translations={{
+          title: t("ndaTitle"),
+          description: t("ndaDescription"),
+          placeholder: t("ndaPasswordPlaceholder"),
+          submit: t("ndaSubmit"),
+          error: t("ndaError"),
+        }}
+      >
+        {pageContent}
+      </NdaModal>
+    );
+  }
+
+  return pageContent;
 }

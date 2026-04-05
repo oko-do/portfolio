@@ -55,6 +55,12 @@
     "getInTouch": "Interested in working together?",
     "contactCta": "Let's discuss your project and see how I can help.",
     "contactButton": "Get in Touch",
-    "viewMoreProjects": "View More Projects"
+    "viewMoreProjects": "View More Projects",
+    "ndaTitle": "Protected Project",
+    "ndaDescription": "This project is under NDA. Please enter the password to view the case study.",
+    "ndaPasswordPlaceholder": "Enter password",
+    "ndaSubmit": "Unlock",
+    "ndaError": "Incorrect password. Please try again.",
+    "ndaBadge": "NDA"
   }
 }

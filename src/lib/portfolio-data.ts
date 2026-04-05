@@ -181,14 +181,10 @@ export const experience: Experience[] = [
 
 export const tools: Tool[] = [
   { name: "Figma", category: "design", icon: "/images/tools/figma.svg" },
-  { name: "Photoshop", category: "design", icon: "/images/tools/photoshop.svg" },
   { name: "Illustrator", category: "design", icon: "/images/tools/illustrator.svg" },
   { name: "After Effects", category: "design", icon: "/images/tools/after-effects.svg" },
-  { name: "ProtoPie", category: "prototyping", icon: "/images/tools/protopie.svg" },
   { name: "Framer", category: "prototyping", icon: "/images/tools/framer.svg" },
   { name: "Miro", category: "collaboration", icon: "/images/tools/miro.svg" },
-  { name: "FigJam", category: "collaboration", icon: "/images/tools/figjam.svg" },
-  { name: "Notion", category: "collaboration", icon: "/images/tools/notion.svg" },
   { name: "Cinema 4D", category: "design", icon: "/images/tools/cinema4d.svg" },
   { name: "Cursor", category: "ai", icon: "/images/tools/cursor.svg" },
   { name: "Claude", category: "ai", icon: "/images/tools/claude.svg" },
