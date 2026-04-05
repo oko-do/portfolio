@@ -6,7 +6,6 @@ import { Menu, X } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { about } from "@/lib/portfolio-data";
 
 const navItems = [
   { key: "about", href: "#about" },
@@ -37,7 +36,7 @@ export default function Header() {
           href="/"
           className="text-foreground font-medium hover:text-primary transition-colors"
         >
-          {about.name.split(" ")[0]}
+          okodo<span className="text-primary">.</span>
         </Link>
 
         {/* Desktop Navigation */}
