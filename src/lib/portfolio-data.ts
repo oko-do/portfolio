@@ -23,8 +23,8 @@ export const experience: Experience[] = [
     company: "JustTrack",
     logo: "/images/logos/justtrack.svg",
     description: {
-      en: "Comprehensive mobile measurement and marketing automation platform (MMP+) that empowers app and game publishers to scale globally by unifying advanced attribution, real-time monetization analytics, and automated campaign optimization into a single, high-performance dashboard.",
-      ru: "Комплексная платформа мобильных измерений и автоматизации маркетинга (MMP+), которая помогает издателям приложений и игр масштабироваться глобально, объединяя продвинутую атрибуцию, аналитику монетизации в реальном времени и автоматизированную оптимизацию кампаний в единый высокопроизводительный дашборд.",
+      en: "Mobile measurement and marketing automation platform unifying attribution, monetization analytics, and campaign optimization.",
+      ru: "Платформа мобильных измерений и автоматизации маркетинга: атрибуция, аналитика монетизации и оптимизация кампаний.",
     },
     roles: [
       {
@@ -40,11 +40,13 @@ export const experience: Experience[] = [
         "I build a scalable design system to keep the platform consistent, fast, and easy to use.",
         "Reimagining the navigation to be app-centric, ensuring users can manage their growth and analytics from a more intuitive, product-focused perspective.",
         'I am as well redesigning "Smart Diagnostic Insights" to help users instantly understand why their performance is changing. By organizing notifications and highlighting only the most important issues, I help users avoid "alert fatigue" and take action through simple, data-driven tools.',
+        "Integrated Storybook into the design-to-development handoff process, minimizing tech debt and component discrepancies.",
       ],
       ru: [
-        "Создание масштабируемой дизайн-системы для обеспечения консистентности, быстродействия и удобства платформы.",
-        "Переосмысление навигации с приложение-ориентированным подходом, позволяющим пользователям управлять ростом и аналитикой с более интуитивной, продуктовой перспективы.",
-        'Редизайн "Smart Diagnostic Insights" для мгновенного понимания изменений производительности. Организация уведомлений и выделение важнейших проблем помогает избежать "усталости от алертов" и принимать решения через простые, data-driven инструменты.',
+        "Спроектировал и внедрил дизайн-систему, которая обеспечила консистентность платформы и ускорила темпы разработки в 3 раза.",
+        "Пересмотрел навигацию, применив приложение-ориентированный подход. Рост удовлетворённости пользователей (Customer Satisfaction Score) на 40%.",
+        "Провёл редизайн модуля диагностики. Организация уведомлений и приоритизация данных помогли устранить «усталость от алертов», сделав принятие решений быстрым и data-driven.",
+        "Интегрировал Storybook в процесс передачи дизайна в разработку, минимизировав технический долг и расхождения в компонентах.",
       ],
     },
     current: true,
@@ -149,7 +151,7 @@ export const experience: Experience[] = [
     logo: "/images/logos/techwings.svg",
     description: {
       en: "Design and development of web services and mobile applications in real estate, finance, education, logistics, and e-commerce.",
-      ru: "Дизайн и разработка веб-сервисов и мобильных приложений в направлениях недвижимости, финансов, образования, логистики и e-commerce",
+      ru: "Агентство дизайна и разработки веб-сервисов и мобильных приложений в сферах недвижимости, финансов, образования, логистики и e-commerce.",
     },
     roles: [
       {
@@ -185,6 +187,7 @@ export const tools: Tool[] = [
   { name: "Cinema 4D", category: "design", icon: "/images/tools/cinema4d.svg" },
   { name: "Claude", category: "ai", icon: "/images/tools/claude.svg" },
   { name: "Cursor", category: "ai", icon: "/images/tools/cursor.svg" },
+  { name: "Dovetail", category: "collaboration", icon: "/images/tools/dovetail.svg" },
   { name: "Figma", category: "design", icon: "/images/tools/figma.svg" },
   { name: "Framer", category: "prototyping", icon: "/images/tools/framer.svg" },
   { name: "GitHub", category: "collaboration", icon: "/images/tools/github.svg" },

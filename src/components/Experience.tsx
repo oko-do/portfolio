@@ -85,36 +85,35 @@ export default function Experience() {
                         transition={{ duration: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
                         className="overflow-hidden"
                       >
-                        <div className="pb-6 pt-2 grid grid-cols-1 md:grid-cols-[240px_1fr] gap-6 md:gap-8">
-                          {/* Left column: logo + description */}
-                          <div className="flex flex-col gap-3">
-                            {job.logo && (
-                              <img
-                                src={job.logo}
-                                alt={`${job.company} logo`}
-                                className="h-6 w-auto object-contain self-start"
-                              />
-                            )}
+                        <div className="pb-6 pt-2 flex flex-col gap-4">
+                          {/* Logo */}
+                          {job.logo && (
+                            <img
+                              src={job.logo}
+                              alt={`${job.company} logo`}
+                              className="h-6 w-auto object-contain self-start"
+                            />
+                          )}
+
+                          {/* Description + tasks */}
+                          <div className="grid grid-cols-1 md:grid-cols-[276px_1fr] gap-6 md:gap-8">
                             <p className="text-muted-foreground text-sm leading-relaxed">
                               {job.description[locale]}
                             </p>
-                          </div>
 
-                          {/* Right column: tasks */}
-                          <div>
-                            <ul className="space-y-2">
-                              {job.tasks[locale].map((task, i) => (
-                                <li
-                                  key={i}
-                                  className="text-foreground text-sm leading-relaxed flex gap-2"
-                                >
-                                  <span className="text-muted-foreground mt-1.5 shrink-0">
-                                    ·
-                                  </span>
-                                  <span>{task}</span>
-                                </li>
-                              ))}
-                            </ul>
+                            <div>
+                              <ul className="space-y-2">
+                                {job.tasks[locale].map((task, i) => (
+                                  <li
+                                    key={i}
+                                    className="text-foreground text-sm leading-relaxed flex items-baseline gap-2"
+                                  >
+                                    <span className="text-muted-foreground shrink-0 text-[8px] relative top-[-1px]">●</span>
+                                    <span>{task}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
                           </div>
                         </div>
                       </motion.div>
