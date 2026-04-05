@@ -55,8 +55,8 @@ export const experience: Experience[] = [
     company: "Huawei",
     logo: "/images/logos/huawei.svg",
     description: {
-      en: "A technology company known for innovative solutions in information technology.",
-      ru: "Технологическая компания, известная инновационными решениями в области информационных технологий",
+      en: "BigTech company providing developer tools and cloud infrastructure.",
+      ru: "BigTech-компания, инструменты для разработчиков и облачная инфраструктура.",
     },
     roles: [
       {
@@ -69,14 +69,10 @@ export const experience: Experience[] = [
     ],
     tasks: {
       en: [
-        "Designing the IDE (Integrated Development Environment).",
-        "Maintenance and improvement. Implementing new features.",
-        "Research and competitive analysis.",
+        "Conducted deep benchmarking and competitive analysis (VS Code, IntelliJ IDEA, Xcode) to identify best patterns and adapt them to internal requirements.",
       ],
       ru: [
-        "Проектирование дизайна IDE (интегрированной среды разработки).",
-        "Поддержка и улучшение. Внедрение новых фич.",
-        "Исследование и анализ конкурентов.",
+        "Проводил глубокий бенчмаркинг и конкурентный анализ (VS Code, IntelliJ IDEA, Xcode) для выявления лучших паттернов и их адаптации под внутренние задачи.",
       ],
     },
   },
