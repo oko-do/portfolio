@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { Menu, X } from "lucide-react";
-import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import LanguageSwitcher from "./LanguageSwitcher";
 
@@ -32,12 +31,16 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
       <nav className="px-6 md:px-12 lg:px-24 py-4 flex items-center justify-between">
-        <Link
-          href="/"
-          className="text-foreground font-medium hover:text-primary transition-colors"
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+          className="text-foreground font-medium hover:text-primary transition-colors cursor-pointer"
         >
           okodo<span className="text-primary">.</span>
-        </Link>
+        </a>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
