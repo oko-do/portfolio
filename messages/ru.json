@@ -2,7 +2,7 @@
   "Header": {
     "about": "Обо мне",
     "experience": "Опыт",
-    "work": "Работы",
+    "work": "Проекты",
     "contacts": "Контакты",
     "downloadCV": "Скачать CV"
   },
@@ -31,7 +31,7 @@
     "title": "Клиенты"
   },
   "Cases": {
-    "title": "Избранные работы"
+    "title": "Проекты"
   },
   "Contacts": {
     "title": "Контакты",
