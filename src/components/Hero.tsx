@@ -72,7 +72,7 @@ export default function Hero() {
           <Button
             variant="default"
             size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90"
+            className=""
             onClick={() =>
               document
                 .getElementById("projects")
@@ -80,7 +80,7 @@ export default function Hero() {
             }
           >
             {t("viewCases")}
-            <ArrowDown className="ml-2 h-4 w-4" />
+            <ArrowDown className="h-4 w-4" />
           </Button>
 
           <Button variant="outline" size="lg" asChild>
