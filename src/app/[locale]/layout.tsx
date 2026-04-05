@@ -4,7 +4,6 @@ import { setRequestLocale } from "next-intl/server";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { routing } from "@/i18n/routing";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 const inter = Inter({
   subsets: ["latin", "cyrillic"],
@@ -43,7 +42,6 @@ export default async function LocaleLayout({ children, params }: Props) {
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
           <main className="flex-1 pt-16">{children}</main>
-          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

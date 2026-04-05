@@ -53,7 +53,8 @@ export default function Contacts() {
         <FadeIn delay={0.3}>
           <div className="space-y-6">
             <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-8">
-              <span className="text-muted-foreground w-24">
+              <span className="text-muted-foreground w-24 inline-flex items-center gap-2">
+                <Mail className="h-4 w-4" />
                 {t("email")}
               </span>
               <a
@@ -65,32 +66,32 @@ export default function Contacts() {
             </div>
 
             <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-8">
-              <span className="text-muted-foreground w-24">
+              <span className="text-muted-foreground w-24 inline-flex items-center gap-2">
+                <Send className="h-4 w-4" />
                 {t("telegram")}
               </span>
               <a
                 href={`https://t.me/${about.telegram.replace("@", "")}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-foreground hover:text-primary transition-colors inline-flex items-center gap-1"
+                className="text-foreground hover:text-primary transition-colors"
               >
                 {about.telegram}
-                <Send className="h-3 w-3" />
               </a>
             </div>
 
             <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-8">
-              <span className="text-muted-foreground w-24">
+              <span className="text-muted-foreground w-24 inline-flex items-center gap-2">
+                <ExternalLink className="h-4 w-4" />
                 {t("linkedin")}
               </span>
               <a
                 href={about.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-foreground hover:text-primary transition-colors inline-flex items-center gap-1"
+                className="text-foreground hover:text-primary transition-colors"
               >
                 Konstantin Dolgov
-                <ExternalLink className="h-3 w-3" />
               </a>
             </div>
           </div>
