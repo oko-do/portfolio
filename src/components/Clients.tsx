@@ -23,10 +23,15 @@ export default function Clients() {
           <div className="flex flex-wrap gap-8 md:gap-12">
             {clients.map((client) => (
               <div
-                key={client}
-                className="text-muted-foreground hover:text-foreground transition-colors text-lg md:text-xl font-medium"
+                key={client.name}
+                className="group flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors text-lg md:text-xl font-medium"
               >
-                {client}
+                <img
+                  src={client.logo}
+                  alt={client.name}
+                  className="h-5 w-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+                />
+                {client.name}
               </div>
             ))}
           </div>

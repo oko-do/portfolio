@@ -180,24 +180,30 @@ export const experience: Experience[] = [
 ];
 
 export const tools: Tool[] = [
-  { name: "Figma", category: "design", icon: "/images/tools/figma.svg" },
-  { name: "Illustrator", category: "design", icon: "/images/tools/illustrator.svg" },
+  { name: "Adobe", category: "design", icon: "/images/tools/adobe.svg" },
   { name: "After Effects", category: "design", icon: "/images/tools/after-effects.svg" },
-  { name: "Framer", category: "prototyping", icon: "/images/tools/framer.svg" },
-  { name: "Miro", category: "collaboration", icon: "/images/tools/miro.svg" },
   { name: "Cinema 4D", category: "design", icon: "/images/tools/cinema4d.svg" },
-  { name: "Cursor", category: "ai", icon: "/images/tools/cursor.svg" },
   { name: "Claude", category: "ai", icon: "/images/tools/claude.svg" },
+  { name: "Cursor", category: "ai", icon: "/images/tools/cursor.svg" },
+  { name: "Figma", category: "design", icon: "/images/tools/figma.svg" },
+  { name: "Framer", category: "prototyping", icon: "/images/tools/framer.svg" },
+  { name: "GitHub", category: "collaboration", icon: "/images/tools/github.svg" },
+  { name: "Illustrator", category: "design", icon: "/images/tools/illustrator.svg" },
+  { name: "Linear", category: "collaboration", icon: "/images/tools/linear.svg" },
+  { name: "Maze", category: "prototyping", icon: "/images/tools/maze.svg" },
+  { name: "Midjourney", category: "ai", icon: "/images/tools/midjourney.svg" },
+  { name: "Miro", category: "collaboration", icon: "/images/tools/miro.svg" },
 ];
 
-export const clients = [
-  "Huawei",
-  "Google",
-  "ADNOC",
-  "Alcon",
-  "McKesson",
-  "EPAM",
-  "JustTrack",
+export const clients: { name: string; logo: string }[] = [
+  { name: "ADNOC", logo: "/images/clients/adnoc.svg" },
+  { name: "Alcon", logo: "/images/clients/alcon.svg" },
+  { name: "Bacardi", logo: "/images/clients/bacardi.svg" },
+  { name: "Coursera", logo: "/images/clients/coursera.svg" },
+  { name: "Goethe Institute", logo: "/images/clients/goethe.svg" },
+  { name: "Google", logo: "/images/clients/google.svg" },
+  { name: "McKesson", logo: "/images/clients/mckesson.svg" },
+  { name: "Sonifi", logo: "/images/clients/sonifi.svg" },
 ];
 
 export const about = {

@@ -43,7 +43,6 @@ export function NdaModal({ slug, translations, children }: NdaModalProps) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const [isChecking, setIsChecking] = useState(true);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -51,14 +50,24 @@ export function NdaModal({ slug, translations, children }: NdaModalProps) {
     if (unlocked.includes(slug)) {
       setIsLocked(false);
     }
-    setIsChecking(false);
   }, [slug]);
 
   useEffect(() => {
-    if (isLocked && !isChecking && inputRef.current) {
+    if (isLocked && inputRef.current) {
       inputRef.current.focus();
     }
-  }, [isLocked, isChecking]);
+  }, [isLocked]);
+
+  useEffect(() => {
+    if (isLocked) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isLocked]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -72,11 +81,6 @@ export function NdaModal({ slug, translations, children }: NdaModalProps) {
       inputRef.current?.focus();
     }
   };
-
-  // While checking sessionStorage, show nothing to prevent flash
-  if (isChecking) {
-    return null;
-  }
 
   return (
     <>
@@ -162,7 +166,7 @@ export function NdaModal({ slug, translations, children }: NdaModalProps) {
         )}
       </AnimatePresence>
 
-      {!isLocked && children}
+      {children}
     </>
   );
 }
