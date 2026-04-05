@@ -7,9 +7,10 @@ import { FadeIn } from "./FadeIn";
 
 const BASE_SPEED = 0.3; // px per frame
 
-// Split clients into two rows
-const row1 = clients.filter((_, i) => i % 2 === 0); // ADNOC, Bacardi, Goethe, McKesson
-const row2 = clients.filter((_, i) => i % 2 === 1); // Alcon, Coursera, Google, Sonifi
+// Manually shuffled rows — different order per row to hide repeats
+const byName = Object.fromEntries(clients.map((c) => [c.name, c]));
+const row1 = [byName["Google"], byName["Bacardi"], byName["ADNOC"], byName["Coursera"], byName["Sonifi"], byName["Goethe Institute"], byName["Alcon"], byName["McKesson"]];
+const row2 = [byName["McKesson"], byName["Alcon"], byName["Sonifi"], byName["Google"], byName["Goethe Institute"], byName["Bacardi"], byName["Coursera"], byName["ADNOC"]];
 
 interface MarqueeRowProps {
   items: typeof clients;
