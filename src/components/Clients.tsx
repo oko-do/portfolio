@@ -7,51 +7,57 @@ import { FadeIn } from "./FadeIn";
 
 const BASE_SPEED = 0.5; // px per frame
 
-export default function Clients() {
-  const t = useTranslations("Clients");
+// Split clients into two rows
+const row1 = clients.filter((_, i) => i % 2 === 0); // ADNOC, Bacardi, Goethe, McKesson
+const row2 = clients.filter((_, i) => i % 2 === 1); // Alcon, Coursera, Google, Sonifi
 
-  // Triple the list for seamless wrapping
-  const marqueeItems = [...clients, ...clients, ...clients];
+interface MarqueeRowProps {
+  items: typeof clients;
+  direction?: "left" | "right"; // left = normal (→ scroll left), right = reverse (→ scroll right)
+  dragVelocityRef: React.RefObject<number>;
+}
 
+function MarqueeRow({ items, direction = "left", dragVelocityRef }: MarqueeRowProps) {
+  const tripled = [...items, ...items, ...items];
   const trackRef = useRef<HTMLDivElement>(null);
   const offsetRef = useRef(0);
-  const velocityRef = useRef(BASE_SPEED);
+  const velocityRef = useRef(direction === "left" ? BASE_SPEED : -BASE_SPEED);
   const isDraggingRef = useRef(false);
   const lastPointerXRef = useRef(0);
-  const dragVelocityRef = useRef(0);
+  const localDragVelocityRef = useRef(0);
   const lastDragTimeRef = useRef(0);
   const rafRef = useRef<number>(0);
+
+  const baseSpeed = direction === "left" ? BASE_SPEED : -BASE_SPEED;
 
   const animate = useCallback(() => {
     const track = trackRef.current;
     if (!track) return;
 
-    const halfWidth = track.scrollWidth / 3;
+    const thirdWidth = track.scrollWidth / 3;
 
     if (!isDraggingRef.current) {
-      // Apply drag velocity with friction (deceleration / easing out)
-      if (Math.abs(dragVelocityRef.current) > 0.1) {
-        velocityRef.current = dragVelocityRef.current;
-        dragVelocityRef.current *= 0.95; // friction
+      if (Math.abs(localDragVelocityRef.current) > 0.1) {
+        velocityRef.current = localDragVelocityRef.current;
+        localDragVelocityRef.current *= 0.95;
       } else {
-        // Ease back to base speed
-        dragVelocityRef.current = 0;
-        velocityRef.current += (BASE_SPEED - velocityRef.current) * 0.02;
+        localDragVelocityRef.current = 0;
+        velocityRef.current += (baseSpeed - velocityRef.current) * 0.02;
       }
     }
 
     offsetRef.current += velocityRef.current;
 
     // Seamless loop
-    if (offsetRef.current >= halfWidth) {
-      offsetRef.current -= halfWidth;
+    if (offsetRef.current >= thirdWidth) {
+      offsetRef.current -= thirdWidth;
     } else if (offsetRef.current < 0) {
-      offsetRef.current += halfWidth;
+      offsetRef.current += thirdWidth;
     }
 
     track.style.transform = `translateX(${-offsetRef.current}px)`;
     rafRef.current = requestAnimationFrame(animate);
-  }, []);
+  }, [baseSpeed]);
 
   useEffect(() => {
     rafRef.current = requestAnimationFrame(animate);
@@ -62,7 +68,7 @@ export default function Clients() {
     isDraggingRef.current = true;
     lastPointerXRef.current = e.clientX;
     lastDragTimeRef.current = Date.now();
-    dragVelocityRef.current = 0;
+    localDragVelocityRef.current = 0;
     velocityRef.current = 0;
     (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
   }, []);
@@ -74,7 +80,7 @@ export default function Clients() {
     const dt = now - lastDragTimeRef.current;
 
     if (dt > 0) {
-      dragVelocityRef.current = dx / Math.max(dt, 1) * 16; // normalize to ~60fps
+      localDragVelocityRef.current = (dx / Math.max(dt, 1)) * 16;
     }
 
     offsetRef.current += dx;
@@ -85,6 +91,50 @@ export default function Clients() {
   const handlePointerUp = useCallback(() => {
     isDraggingRef.current = false;
   }, []);
+
+  return (
+    <div
+      className="relative select-none touch-pan-y"
+      onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
+      onPointerUp={handlePointerUp}
+      onPointerCancel={handlePointerUp}
+    >
+      <div
+        ref={trackRef}
+        className="flex will-change-transform"
+        style={{ cursor: "grab" }}
+      >
+        {tripled.map((client, i) => (
+          <a
+            key={`${client.name}-${i}`}
+            href={client.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center justify-center shrink-0 px-4 md:px-12"
+            draggable={false}
+            onClick={(e) => {
+              if (Math.abs(dragVelocityRef.current) > 0.5 || Math.abs(localDragVelocityRef.current) > 0.5) {
+                e.preventDefault();
+              }
+            }}
+          >
+            <img
+              src={client.logo}
+              alt={client.name}
+              draggable={false}
+              className="h-6 md:h-10 w-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+            />
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default function Clients() {
+  const t = useTranslations("Clients");
+  const dragVelocityRef = useRef(0);
 
   return (
     <section
@@ -100,45 +150,14 @@ export default function Clients() {
       </div>
 
       <FadeIn delay={0.1}>
-        <div
-          className="relative select-none touch-pan-y"
-          onPointerDown={handlePointerDown}
-          onPointerMove={handlePointerMove}
-          onPointerUp={handlePointerUp}
-          onPointerCancel={handlePointerUp}
-        >
+        <div className="relative">
           {/* Fade edges */}
           <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 
-          <div
-            ref={trackRef}
-            className="flex will-change-transform"
-            style={{ cursor: "grab" }}
-          >
-            {marqueeItems.map((client, i) => (
-              <a
-                key={`${client.name}-${i}`}
-                href={client.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-center shrink-0 px-8 md:px-12"
-                draggable={false}
-                onClick={(e) => {
-                  // Prevent link navigation if user was dragging
-                  if (Math.abs(dragVelocityRef.current) > 0.5) {
-                    e.preventDefault();
-                  }
-                }}
-              >
-                <img
-                  src={client.logo}
-                  alt={client.name}
-                  draggable={false}
-                  className="h-8 md:h-10 w-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
-                />
-              </a>
-            ))}
+          <div className="flex flex-col gap-4 md:gap-6">
+            <MarqueeRow items={row1} direction="left" dragVelocityRef={dragVelocityRef} />
+            <MarqueeRow items={row2} direction="right" dragVelocityRef={dragVelocityRef} />
           </div>
         </div>
       </FadeIn>
