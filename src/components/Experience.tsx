@@ -41,10 +41,12 @@ export default function Experience() {
                     onClick={() => toggle(index)}
                     className="w-full text-left py-4 flex items-center justify-between gap-4 group cursor-pointer"
                   >
-                    <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-4">
-                      <span className="text-foreground font-medium">
-                        {job.company}
-                      </span>
+                    <div className="flex flex-col md:flex-row md:items-center md:gap-4">
+                      {!isOpen && (
+                        <span className="text-foreground font-medium">
+                          {job.company}
+                        </span>
+                      )}
                       <span className="text-muted-foreground">
                         {job.roles[0].role[locale]}
                       </span>
@@ -85,7 +87,7 @@ export default function Experience() {
                         transition={{ duration: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
                         className="overflow-hidden"
                       >
-                        <div className="pb-6 pt-2 flex flex-col gap-4">
+                        <div className="pb-6 flex flex-col gap-3">
                           {/* Logo */}
                           {job.logo && (
                             <img
