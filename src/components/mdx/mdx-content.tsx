@@ -1,4 +1,5 @@
 import Image from "next/image";
+import React from "react";
 import { Badge } from "@/components/ui/badge";
 
 // Custom MDX components for rich content
@@ -37,10 +38,19 @@ export const mdxComponents = {
     />
   ),
 
-  // Paragraphs
-  p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
-    <p className="text-foreground/80 leading-relaxed mb-6" {...props} />
-  ),
+  // Paragraphs — unwrap if only child is an image (avoid <p><figure> hydration error)
+  p: ({ children, ...rest }: React.HTMLAttributes<HTMLParagraphElement>) => {
+    const childArray = React.Children.toArray(children);
+    // MDX wraps ![](img) in <p>. Our img override renders <figure>,
+    // but <figure> inside <p> is invalid HTML. Detect and unwrap.
+    if (childArray.length === 1 && React.isValidElement(childArray[0])) {
+      const child = childArray[0] as React.ReactElement<Record<string, unknown>>;
+      if (child.props?.src && typeof child.props.src === "string") {
+        return <>{children}</>;
+      }
+    }
+    return <p className="text-foreground/80 leading-relaxed mb-6" {...rest}>{children}</p>;
+  },
 
   // Lists
   ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
