@@ -98,9 +98,25 @@ export const mdxComponents = {
   ),
 
   // Image grid — 2 columns, 1 row, 50% width each
-  ImageGrid: ({ children }: { children: React.ReactNode }) => (
+  ImageGrid: ({
+    images,
+  }: {
+    images: { src: string; alt: string }[];
+  }) => (
     <div className="grid grid-cols-2 gap-4 my-8">
-      {children}
+      {images.map((img, i) => (
+        <figure key={i}>
+          <div className="rounded-lg overflow-hidden border border-border">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={img.src} alt={img.alt} className="w-full h-auto" />
+          </div>
+          {img.alt && (
+            <figcaption className="text-sm text-muted-foreground text-left mt-3">
+              {img.alt}
+            </figcaption>
+          )}
+        </figure>
+      ))}
     </div>
   ),
 
