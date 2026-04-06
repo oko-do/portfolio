@@ -19,7 +19,7 @@ interface ProjectData {
 
 export function CasesGrid({ projects }: { projects: ProjectData[] }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {projects.map((project, index) => (
         <FadeIn key={project.slug} delay={index * 0.05}>
           <Link href={`/cases/${project.slug}`} className="group block">
