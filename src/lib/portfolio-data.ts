@@ -193,6 +193,7 @@ export const tools: Tool[] = [
   { name: "Maze", category: "prototyping", icon: "/images/tools/maze.svg" },
   { name: "Midjourney", category: "ai", icon: "/images/tools/midjourney.svg" },
   { name: "Miro", category: "collaboration", icon: "/images/tools/miro.svg" },
+  { name: "OpenCode", category: "ai", icon: "/images/tools/opencode.svg" },
 ];
 
 export const clients: { name: string; logo: string; url: string }[] = [
