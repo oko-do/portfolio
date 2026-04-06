@@ -180,6 +180,7 @@ export const experience: Experience[] = [
 export const tools: Tool[] = [
   { name: "Adobe", category: "design", icon: "/images/tools/adobe.svg" },
   { name: "After Effects", category: "design", icon: "/images/tools/after-effects.svg" },
+  { name: "AI Studio", category: "ai", icon: "/images/tools/ai-studio.svg" },
   { name: "Cinema 4D", category: "design", icon: "/images/tools/cinema4d.svg" },
   { name: "Claude", category: "ai", icon: "/images/tools/claude.svg" },
   { name: "Cursor", category: "ai", icon: "/images/tools/cursor.svg" },
