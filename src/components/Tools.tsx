@@ -13,7 +13,7 @@ export default function Tools() {
       id="tools"
       className="px-6 md:px-12 lg:px-24 py-20 border-t border-border"
     >
-      <div className="max-w-4xl">
+      <div>
         <FadeIn>
           <h2 className="text-sm text-muted-foreground uppercase tracking-wide mb-8">
             {t("title")}
@@ -21,7 +21,7 @@ export default function Tools() {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6">
             {tools.map((tool) => (
               <div
                 key={tool.name}

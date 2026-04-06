@@ -24,7 +24,7 @@ export default async function Cases() {
       id="projects"
       className="px-6 md:px-12 lg:px-24 py-20 border-t border-border"
     >
-      <div className="max-w-6xl">
+      <div>
         <h2 className="text-sm text-muted-foreground uppercase tracking-wide mb-8">
           {t("title")}
         </h2>
