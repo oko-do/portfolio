@@ -53,14 +53,6 @@ export default function Contacts() {
         <FadeIn delay={0.3}>
           <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
             <a
-              href={`mailto:${about.email}`}
-              className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <Mail className="h-4 w-4" />
-              {about.email}
-            </a>
-
-            <a
               href={`https://t.me/${about.telegram.replace("@", "")}`}
               target="_blank"
               rel="noopener noreferrer"
