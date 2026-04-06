@@ -15,18 +15,20 @@ export default function Contacts() {
       id="contact"
       className="px-6 md:px-12 lg:px-24 py-20 border-t border-border"
     >
-      <div className="max-w-4xl">
-        <FadeIn>
-          <h2 className="text-sm text-muted-foreground uppercase tracking-wide mb-8">
-            {t("title")}
-          </h2>
-        </FadeIn>
+      <div>
+        <div className="max-w-4xl">
+          <FadeIn>
+            <h2 className="text-sm text-muted-foreground uppercase tracking-wide mb-8">
+              {t("title")}
+            </h2>
+          </FadeIn>
 
-        <FadeIn delay={0.1}>
-          <p className="text-2xl md:text-3xl font-medium mb-8 text-balance">
-            {t("cta")}
-          </p>
-        </FadeIn>
+          <FadeIn delay={0.1}>
+            <p className="text-2xl md:text-3xl font-medium mb-8 text-balance">
+              {t("cta")}
+            </p>
+          </FadeIn>
+        </div>
 
         <FadeIn delay={0.2}>
           <div className="flex flex-wrap items-center gap-4">
