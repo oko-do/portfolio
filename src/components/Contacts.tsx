@@ -29,7 +29,7 @@ export default function Contacts() {
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <div className="flex flex-wrap gap-4 mb-12">
+          <div className="flex flex-wrap items-center gap-4">
             <Button size="lg" asChild>
               <a href={`mailto:${about.email}`}>
                 <Mail className="h-4 w-4" />
@@ -47,11 +47,7 @@ export default function Contacts() {
                 {t("downloadCV")}
               </a>
             </Button>
-          </div>
-        </FadeIn>
 
-        <FadeIn delay={0.3}>
-          <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
             <a
               href={`https://t.me/${about.telegram.replace("@", "")}`}
               target="_blank"
