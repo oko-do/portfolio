@@ -113,16 +113,24 @@ export default async function ProjectPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Hero Image Placeholder */}
+      {/* Hero Image */}
       <section className="px-6 md:px-12 lg:px-24 pb-12">
         <div
           className={`relative aspect-[16/9] max-w-6xl rounded-xl overflow-hidden border border-border bg-gradient-to-br ${frontmatter.gradient}`}
         >
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-4xl font-bold text-foreground/10">
-              {frontmatter.client}
-            </span>
-          </div>
+          {frontmatter.coverImage ? (
+            <img
+              src={frontmatter.coverImage}
+              alt={frontmatter.title}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-4xl font-bold text-foreground/10">
+                {frontmatter.client}
+              </span>
+            </div>
+          )}
         </div>
       </section>
 

@@ -6,16 +6,16 @@ export const mdxComponents = {
   // Enhanced image component
   img: (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
     <figure className="my-8">
-      <div className="relative aspect-video rounded-lg overflow-hidden border border-border">
+      <div className="rounded-lg overflow-hidden border border-border">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           {...props}
           alt={props.alt || ""}
-          className="w-full h-full object-cover"
+          className="w-full h-auto"
         />
       </div>
       {props.alt && (
-        <figcaption className="text-sm text-muted-foreground text-center mt-3">
+        <figcaption className="text-sm text-muted-foreground text-left mt-3">
           {props.alt}
         </figcaption>
       )}

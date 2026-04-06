@@ -13,6 +13,7 @@ interface ProjectData {
   tags: string[];
   year: string;
   gradient: string;
+  coverImage?: string;
   award?: string;
   protected?: boolean;
 }
@@ -24,15 +25,23 @@ export function CasesGrid({ projects }: { projects: ProjectData[] }) {
         <FadeIn key={project.slug} delay={index * 0.05}>
           <Link href={`/cases/${project.slug}`} className="group block">
             <article className="h-full rounded-lg bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:bg-card/80 overflow-hidden">
-              {/* Gradient Cover Placeholder */}
+              {/* Cover Image */}
               <div
                 className={`relative aspect-[16/10] overflow-hidden bg-gradient-to-br ${project.gradient}`}
               >
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-3xl font-bold text-foreground/10">
-                    {project.client}
-                  </span>
-                </div>
+                {project.coverImage ? (
+                  <img
+                    src={project.coverImage}
+                    alt={project.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-3xl font-bold text-foreground/10">
+                      {project.client}
+                    </span>
+                  </div>
+                )}
                 {project.protected && (
                   <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-background/80 backdrop-blur-sm border border-border">
                     <Lock className="h-3 w-3 text-muted-foreground" />

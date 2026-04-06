@@ -21,7 +21,7 @@ export default function Tools() {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
+            <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-2">
             {tools.map((tool) => (
               <div
                 key={tool.name}

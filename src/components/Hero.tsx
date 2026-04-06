@@ -50,21 +50,21 @@ export default function Hero() {
 
           <motion.h1
             variants={itemVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-4 text-balance"
+            className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-4 text-left"
           >
             {about.name[locale]}
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
-            className="text-xl md:text-2xl text-muted-foreground mb-6"
+            className="text-xl md:text-2xl text-muted-foreground mb-6 text-left"
           >
             {about.role[locale]}
           </motion.p>
 
           <motion.p
             variants={itemVariants}
-            className="text-lg md:text-xl text-foreground/80 max-w-2xl mb-10 leading-relaxed"
+            className="text-lg md:text-xl text-foreground/80 max-w-2xl mb-10 leading-relaxed text-left"
           >
             {about.tagline[locale]}
           </motion.p>
