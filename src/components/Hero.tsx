@@ -34,67 +34,83 @@ export default function Hero() {
 
   return (
     <section className="min-h-[90vh] flex flex-col justify-center px-6 md:px-12 lg:px-24 py-20">
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="max-w-4xl"
-      >
-        <motion.p
-          variants={itemVariants}
-          className="text-muted-foreground text-sm tracking-wide uppercase mb-4"
+      <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-20">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="max-w-4xl flex-1"
         >
-          {about.location[locale]}
-        </motion.p>
-
-        <motion.h1
-          variants={itemVariants}
-          className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-4 text-balance"
-        >
-          {about.name}
-        </motion.h1>
-
-        <motion.p
-          variants={itemVariants}
-          className="text-xl md:text-2xl text-muted-foreground mb-6"
-        >
-          {about.role[locale]}
-        </motion.p>
-
-        <motion.p
-          variants={itemVariants}
-          className="text-lg md:text-xl text-foreground/80 max-w-2xl mb-10 leading-relaxed"
-        >
-          {about.tagline[locale]}
-        </motion.p>
-
-        <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
-          <Button
-            variant="default"
-            size="lg"
-            className=""
-            onClick={() =>
-              document
-                .getElementById("projects")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
+          <motion.p
+            variants={itemVariants}
+            className="text-muted-foreground text-sm tracking-wide uppercase mb-4"
           >
-            {t("viewCases")}
-            <ArrowDown className="h-4 w-4" />
-          </Button>
+            {about.location[locale]}
+          </motion.p>
 
-          <Button variant="outline" size="lg" asChild>
-            <a
-              href={about.cvLink}
-              target="_blank"
-              rel="noopener noreferrer"
+          <motion.h1
+            variants={itemVariants}
+            className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-4 text-balance"
+          >
+            {about.name[locale]}
+          </motion.h1>
+
+          <motion.p
+            variants={itemVariants}
+            className="text-xl md:text-2xl text-muted-foreground mb-6"
+          >
+            {about.role[locale]}
+          </motion.p>
+
+          <motion.p
+            variants={itemVariants}
+            className="text-lg md:text-xl text-foreground/80 max-w-2xl mb-10 leading-relaxed"
+          >
+            {about.tagline[locale]}
+          </motion.p>
+
+          <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
+            <Button
+              variant="default"
+              size="lg"
+              className=""
+              onClick={() =>
+                document
+                  .getElementById("projects")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
             >
-              <FileText className="h-4 w-4" />
-              {t("downloadCV")}
-            </a>
-          </Button>
+              {t("viewCases")}
+              <ArrowDown className="h-4 w-4" />
+            </Button>
+
+            <Button variant="outline" size="lg" asChild>
+              <a
+                href={about.cvLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FileText className="h-4 w-4" />
+                {t("downloadCV")}
+              </a>
+            </Button>
+          </motion.div>
         </motion.div>
-      </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number], delay: 0.3 }}
+          className="hidden lg:block shrink-0"
+        >
+          {/* Replace /images/photo.jpg with your actual photo */}
+          <img
+            src="/images/photo.png"
+            alt={about.name[locale]}
+            className="w-[467px] h-[624px] object-cover rounded-2xl"
+          />
+        </motion.div>
+      </div>
     </section>
   );
 }

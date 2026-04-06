@@ -208,7 +208,10 @@ export const clients: { name: string; logo: string; url: string }[] = [
 ];
 
 export const about = {
-  name: "Konstantin Dolgov",
+  name: {
+    en: "Konstantin Dolgov",
+    ru: "Константин Долгов",
+  },
   role: {
     en: "Lead Product Designer",
     ru: "Lead продуктовый дизайнер",
@@ -219,7 +222,7 @@ export const about = {
   },
   tagline: {
     en: "Designing complex enterprise products with user-centered approach",
-    ru: "Проектирование сложных корпоративных продуктов с человекоцентричным подходом",
+    ru: "Проектирование сложных корпоративных продуктов с\u00A0человекоцентричным подходом",
   },
   expertise: [
     "AI-Driven",
