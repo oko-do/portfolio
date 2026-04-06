@@ -97,6 +97,13 @@ export const mdxComponents = {
     <a className="text-primary hover:underline" {...props} />
   ),
 
+  // Image grid — 2 columns, 1 row, 50% width each
+  ImageGrid: ({ children }: { children: React.ReactNode }) => (
+    <div className="grid grid-cols-2 gap-4 my-8">
+      {children}
+    </div>
+  ),
+
   // Custom components
   Badge,
 
