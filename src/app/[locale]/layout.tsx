@@ -2,7 +2,6 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { Inter, JetBrains_Mono } from "next/font/google";
-import Script from "next/script";
 import { routing } from "@/i18n/routing";
 import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -38,13 +37,17 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <html lang={locale} className="dark">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `history.scrollRestoration="manual"`,
+          }}
+        />
+      </head>
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased min-h-screen flex flex-col bg-background text-foreground`}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <Script id="scroll-restoration" strategy="beforeInteractive">
-            {`history.scrollRestoration = "manual"`}
-          </Script>
           <Header />
           <main className="flex-1 pt-16">{children}</main>
           <ScrollToTop />
