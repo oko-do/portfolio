@@ -31,7 +31,7 @@ export default function Tools() {
                   <img
                     src={tool.icon}
                     alt={tool.name}
-                    className="w-8 h-8 object-contain brightness-0 invert opacity-40 group-hover:brightness-100 group-hover:invert-0 group-hover:opacity-100 transition-all duration-300"
+                    className="w-8 h-8 object-contain brightness-0 invert opacity-70 group-hover:brightness-100 group-hover:invert-0 group-hover:opacity-100 transition-all duration-300"
                   />
                 </div>
                 <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors text-center">

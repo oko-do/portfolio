@@ -158,7 +158,7 @@ export default function Clients() {
 
           <div className="flex flex-col gap-4 md:gap-6">
             <MarqueeRow items={row1} direction="left" dragVelocityRef={dragVelocityRef} />
-            <MarqueeRow items={row2} direction="right" dragVelocityRef={dragVelocityRef} />
+            {/* <MarqueeRow items={row2} direction="right" dragVelocityRef={dragVelocityRef} /> */}
           </div>
         </div>
       </FadeIn>
