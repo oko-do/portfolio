@@ -178,7 +178,7 @@ export const experience: Experience[] = [
 ];
 
 export const tools: Tool[] = [
-  { name: "Adobe", category: "design", icon: "/images/tools/adobe.svg" },
+  // { name: "Adobe", category: "design", icon: "/images/tools/adobe.svg" },
   { name: "After Effects", category: "design", icon: "/images/tools/after-effects.svg" },
   { name: "AI Studio", category: "ai", icon: "/images/tools/ai-studio.svg" },
   { name: "Cinema 4D", category: "design", icon: "/images/tools/cinema4d.svg" },
@@ -222,10 +222,10 @@ export const about = {
     ru: "Проектирование сложных корпоративных продуктов с человекоцентричным подходом",
   },
   expertise: [
+    "AI-Driven",
+    "Design Operations",
     "Design Systems",
     "Enterprise SaaS / B2B",
-    "Design Operations",
-    "AI-Driven",
     "Mentoring",
   ],
   email: "kons.dolgov@gmail.com",
