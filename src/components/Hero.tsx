@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { about } from "@/lib/portfolio-data";
 import { useLocale } from "next-intl";
@@ -89,6 +89,7 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
             >
+              <FileText className="h-4 w-4" />
               {t("downloadCV")}
             </a>
           </Button>

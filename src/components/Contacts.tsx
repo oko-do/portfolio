@@ -32,7 +32,7 @@ export default function Contacts() {
           <div className="flex flex-wrap gap-4 mb-12">
             <Button size="lg" asChild>
               <a href={`mailto:${about.email}`}>
-                <Mail className="mr-2 h-4 w-4" />
+                <Mail className="h-4 w-4" />
                 {t("sendEmail")}
               </a>
             </Button>
@@ -43,7 +43,7 @@ export default function Contacts() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FileText className="mr-2 h-4 w-4" />
+                <FileText className="h-4 w-4" />
                 {t("downloadCV")}
               </a>
             </Button>
