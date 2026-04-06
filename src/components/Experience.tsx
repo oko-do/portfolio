@@ -21,7 +21,7 @@ export default function Experience() {
       id="experience"
       className="px-6 md:px-12 lg:px-24 py-20 border-t border-border"
     >
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-5xl">
         <FadeIn>
           <h2 className="text-sm text-muted-foreground uppercase tracking-wide mb-8">
             {t("title")}
