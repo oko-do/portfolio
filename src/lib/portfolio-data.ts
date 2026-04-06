@@ -208,8 +208,8 @@ export const clients: { name: string; logo: string; url: string }[] = [
 export const about = {
   name: "Konstantin Dolgov",
   role: {
-    en: "Senior+ / Lead Product Designer",
-    ru: "Senior продуктовый дизайнер",
+    en: "Lead Product Designer",
+    ru: "Lead продуктовый дизайнер",
   },
   location: {
     en: "Hamburg, Germany",
