@@ -62,6 +62,8 @@
     "ndaSubmit": "Unlock",
     "ndaError": "Incorrect password. Please try again.",
     "ndaBack": "Back",
-    "ndaBadge": "NDA"
+    "ndaBadge": "NDA",
+    "repository": "Repository",
+    "website": "Website"
   }
 }

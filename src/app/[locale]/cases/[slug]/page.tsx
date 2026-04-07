@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { Link } from "@/i18n/navigation";
-import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowLeft, ArrowRight, ExternalLink, Code, Globe } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -160,6 +160,35 @@ export default async function ProjectPage({ params }: Props) {
             <p className="text-foreground">{frontmatter.year}</p>
           </div>
         </div>
+
+        {(frontmatter.repoUrl || frontmatter.websiteUrl) && (
+          <div className="max-w-4xl flex flex-wrap gap-3 mt-8">
+            {frontmatter.repoUrl && (
+              <Button variant="outline" size="sm" asChild>
+                <a
+                  href={frontmatter.repoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Code className="h-4 w-4" />
+                  {t("repository")}
+                </a>
+              </Button>
+            )}
+            {frontmatter.websiteUrl && (
+              <Button variant="outline" size="sm" asChild>
+                <a
+                  href={frontmatter.websiteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Globe className="h-4 w-4" />
+                  {t("website")}
+                </a>
+              </Button>
+            )}
+          </div>
+        )}
       </section>
 
       {/* MDX Content */}

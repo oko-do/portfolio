@@ -15,6 +15,8 @@ export interface ProjectFrontmatter {
   gradient: string;
   team?: string;
   award?: string;
+  repoUrl?: string;
+  websiteUrl?: string;
   published: boolean;
   protected?: boolean;
   order: number;
