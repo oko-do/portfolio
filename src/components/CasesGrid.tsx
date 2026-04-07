@@ -33,7 +33,7 @@ export function CasesGrid({ projects }: { projects: ProjectData[] }) {
                   <img
                     src={project.coverImage}
                     alt={project.title}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-cover object-top"
                   />
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center">
