@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { Badge } from "@/components/ui/badge";
+import { ImageCarousel } from "@/components/mdx/image-carousel";
 
 // Custom MDX components for rich content
 export const mdxComponents = {
@@ -147,6 +148,7 @@ export const mdxComponents = {
 
   // Custom components
   Badge,
+  ImageCarousel,
 
   // Callout component
   Callout: ({
