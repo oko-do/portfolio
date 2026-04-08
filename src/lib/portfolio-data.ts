@@ -69,9 +69,11 @@ export const experience: Experience[] = [
     ],
     tasks: {
       en: [
+        "Product development of an integrated development environment (IDE), including building and evolving the design library, maintaining design documentation, and optimizing product features.",
         "Conducted deep benchmarking and competitive analysis (VS Code, IntelliJ IDEA, Xcode) to identify best patterns and adapt them to internal requirements.",
       ],
       ru: [
+        "Продуктовая разработка интегрированной среды разработки (IDE), включая создание и развитие дизайн-библиотеки, поддержку дизайн-документации и оптимизацию продуктовых фич.",
         "Проводил глубокий бенчмаркинг и конкурентный анализ (VS Code, IntelliJ IDEA, Xcode) для выявления лучших паттернов и их адаптации под внутренние задачи.",
       ],
     },
