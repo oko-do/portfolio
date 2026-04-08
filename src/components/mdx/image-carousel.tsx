@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { ZoomableImage } from "@/components/mdx/zoomable-image";
 
 interface Slide {
   src: string;
@@ -55,7 +54,8 @@ export function ImageCarousel(props: ImageCarouselProps) {
   return (
     <figure className="my-8">
       <div className="rounded-lg overflow-hidden border border-border">
-        <ZoomableImage
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src={slides[current].src}
           alt={slides[current].alt}
           className="w-full h-auto"
