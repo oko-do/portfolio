@@ -74,14 +74,14 @@ export function ImageCarousel(props: ImageCarouselProps) {
             </span>
             <button
               onClick={prev}
-              className="w-7 h-7 flex items-center justify-center text-muted-foreground/50 hover:text-foreground transition-colors cursor-pointer"
+              className="w-7 h-7 flex items-center justify-center text-foreground hover:text-primary transition-colors cursor-pointer"
               aria-label="Previous slide"
             >
               <ArrowLeft className="w-4 h-4" />
             </button>
             <button
               onClick={next}
-              className="w-7 h-7 flex items-center justify-center text-muted-foreground/50 hover:text-foreground transition-colors cursor-pointer"
+              className="w-7 h-7 flex items-center justify-center text-foreground hover:text-primary transition-colors cursor-pointer"
               aria-label="Next slide"
             >
               <ArrowRight className="w-4 h-4" />
