@@ -57,14 +57,14 @@ export const mdxComponents = {
   // Lists
   ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
     <ul
-      className="list-disc list-inside space-y-2 mb-6 text-foreground/80"
+      className="list-disc list-outside pl-5 space-y-2 mb-6 text-foreground/80"
       {...props}
     />
   ),
 
   ol: (props: React.HTMLAttributes<HTMLOListElement>) => (
     <ol
-      className="list-decimal list-inside space-y-2 mb-6 text-foreground/80"
+      className="list-decimal list-outside pl-5 space-y-2 mb-6 text-foreground/80"
       {...props}
     />
   ),
