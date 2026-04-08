@@ -40,7 +40,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `history.scrollRestoration="manual"`,
+            __html: `history.scrollRestoration="manual";document.addEventListener("contextmenu",function(e){if(e.target.tagName==="IMG")e.preventDefault()})`,
           }}
         />
       </head>

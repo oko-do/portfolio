@@ -136,4 +136,18 @@ html {
   }
 }
 
+/* Image save protection */
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  pointer-events: none;
+}
+
+/* Re-enable pointer events for interactive images (lightbox trigger) */
+.cursor-zoom-in,
+.cursor-zoom-out {
+  pointer-events: auto;
+}
+
 /* Marquee animation handled by JS in Clients.tsx */
