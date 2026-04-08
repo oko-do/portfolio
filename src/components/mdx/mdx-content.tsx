@@ -2,16 +2,16 @@ import Image from "next/image";
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { ImageCarousel } from "@/components/mdx/image-carousel";
+import { ZoomableImage } from "@/components/mdx/zoomable-image";
 
 // Custom MDX components for rich content
 export const mdxComponents = {
-  // Enhanced image component
+  // Enhanced image component with zoom
   img: (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
     <figure className="my-8">
       <div className="rounded-lg overflow-hidden border border-border">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          {...props}
+        <ZoomableImage
+          src={typeof props.src === "string" ? props.src : ""}
           alt={props.alt || ""}
           className="w-full h-auto"
         />
@@ -139,8 +139,7 @@ export const mdxComponents = {
         {items.map((item, i) => (
           <figure key={i}>
             <div className="rounded-lg overflow-hidden border border-border">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={item.src} alt={item.alt || ""} className="w-full h-auto" />
+              <ZoomableImage src={item.src} alt={item.alt || ""} className="w-full h-auto" />
             </div>
             {item.alt && (
               <figcaption className="text-sm text-muted-foreground text-left mt-3">
