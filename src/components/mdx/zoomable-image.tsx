@@ -53,8 +53,7 @@ export function ZoomableImage({ src, alt, className }: ZoomableImageProps) {
           <img
             src={src}
             alt={alt || ""}
-            className="max-w-[95vw] max-h-[95vh] object-contain"
-            onClick={(e) => e.stopPropagation()}
+            className="max-w-[95vw] max-h-[95vh] object-contain cursor-zoom-out"
           />
         </div>
       )}
