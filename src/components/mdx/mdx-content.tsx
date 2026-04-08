@@ -108,43 +108,50 @@ export const mdxComponents = {
     <a className="text-primary hover:underline" {...props} />
   ),
 
-  // Image grid — 2 columns, 1 row, 50% width each
+  // Image grid — 2 columns, supports 2 or 4 images (1 or 2 rows)
   ImageGrid: ({
     src1,
     alt1,
     src2,
     alt2,
+    src3,
+    alt3,
+    src4,
+    alt4,
   }: {
     src1: string;
     alt1?: string;
     src2: string;
     alt2?: string;
-  }) => (
-    <div className="grid grid-cols-2 gap-4 my-8">
-      <figure>
-        <div className="rounded-lg overflow-hidden border border-border">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={src1} alt={alt1 || ""} className="w-full h-auto" />
-        </div>
-        {alt1 && (
-          <figcaption className="text-sm text-muted-foreground text-left mt-3">
-            {alt1}
-          </figcaption>
-        )}
-      </figure>
-      <figure>
-        <div className="rounded-lg overflow-hidden border border-border">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={src2} alt={alt2 || ""} className="w-full h-auto" />
-        </div>
-        {alt2 && (
-          <figcaption className="text-sm text-muted-foreground text-left mt-3">
-            {alt2}
-          </figcaption>
-        )}
-      </figure>
-    </div>
-  ),
+    src3?: string;
+    alt3?: string;
+    src4?: string;
+    alt4?: string;
+  }) => {
+    const items = [
+      { src: src1, alt: alt1 },
+      { src: src2, alt: alt2 },
+      ...(src3 ? [{ src: src3, alt: alt3 }] : []),
+      ...(src4 ? [{ src: src4, alt: alt4 }] : []),
+    ];
+    return (
+      <div className="grid grid-cols-2 gap-4 my-8">
+        {items.map((item, i) => (
+          <figure key={i}>
+            <div className="rounded-lg overflow-hidden border border-border">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={item.src} alt={item.alt || ""} className="w-full h-auto" />
+            </div>
+            {item.alt && (
+              <figcaption className="text-sm text-muted-foreground text-left mt-3">
+                {item.alt}
+              </figcaption>
+            )}
+          </figure>
+        ))}
+      </div>
+    );
+  },
 
   // Custom components
   Badge,
