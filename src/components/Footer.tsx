@@ -31,6 +31,14 @@ export default function Footer() {
             LinkedIn
           </a>
           <a
+            href={about.behance}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Behance
+          </a>
+          <a
             href={`https://t.me/${about.telegram.replace("@", "")}`}
             target="_blank"
             rel="noopener noreferrer"

@@ -162,18 +162,16 @@ export const experience: Experience[] = [
     ],
     tasks: {
       en: [
-        "Designing web and mobile applications.",
-        "Clarifying client and user needs, reworking previous solutions.",
-        "Collaboration and optimization of work with the development team.",
-        "Presenting solutions.",
-        "Mentoring juniors.",
+        "End-to-end design: responsible for the full cycle of creating web and mobile products in Fintech, E-commerce, and Real Estate.",
+        "Discovery & redesign: transformed business requirements into intuitive interfaces, reworking legacy solutions based on user needs analysis.",
+        "Stakeholder communication: requirements gathering, iterative approvals and feedback, defending design concepts to clients.",
+        "Mentorship: supervised the professional growth of Junior designers and ensured the quality of visual solutions.",
       ],
       ru: [
-        "Проектирование веб и мобильных приложений.",
-        "Уточнение потребностей клиентов и пользователей, переработка предыдущих решений.",
-        "Взаимодействие и оптимизация работы с командой разработчиков.",
-        "Презентация решений.",
-        "Менторинг джунов.",
+        "End-to-end проектирование: отвечал за полный цикл создания веб- и мобильных продуктов в сферах Fintech, E-commerce и Real Estate.",
+        "Discovery и редизайн: трансформировал бизнес-требования в интуитивные интерфейсы, перерабатывая устаревшие решения на основе анализа потребностей пользователей.",
+        "Коммуникация со стейкхолдерами: сбор требований, итерационные согласования и фидбек, защита дизайн-концепции перед заказчиками.",
+        "Менторство: курировал профессиональный рост Junior-дизайнеров и отвечал за качество визуальных решений.",
       ],
     },
   },
@@ -236,5 +234,6 @@ export const about = {
   email: "kons.dolgov@gmail.com",
   telegram: "@KonstantinDol",
   linkedin: "https://www.linkedin.com/in/okodo",
+  behance: "https://www.behance.net/keloid",
   cvLink: "https://docs.google.com",
 };

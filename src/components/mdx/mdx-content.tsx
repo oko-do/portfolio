@@ -12,7 +12,7 @@ export const mdxComponents = {
     <figure className="my-8">
       <div className="rounded-lg overflow-hidden border border-border">
         <ZoomableImage
-          src={props.src || ""}
+          src={String(props.src || "")}
           alt={props.alt || ""}
           className="w-full h-auto"
         />
