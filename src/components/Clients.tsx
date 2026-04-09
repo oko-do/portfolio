@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { useRef, useEffect, useCallback } from "react";
+import { useRef, useEffect, useCallback, useState } from "react";
 import { clients } from "@/lib/portfolio-data";
 import { FadeIn } from "./FadeIn";
 
@@ -12,13 +12,44 @@ const byName = Object.fromEntries(clients.map((c) => [c.name, c]));
 const row1 = [byName["Google"], byName["Bacardi"], byName["ADNOC"], byName["Coursera"], byName["Sonifi"], byName["Goethe Institute"], byName["Alcon"], byName["McKesson"]];
 const row2 = [byName["McKesson"], byName["Alcon"], byName["Sonifi"], byName["Google"], byName["Goethe Institute"], byName["Bacardi"], byName["Coursera"], byName["ADNOC"]];
 
+// Preload all unique logo SVGs and resolve when done
+function useLogosReady(items: typeof clients) {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const urls = [...new Set(items.map((c) => c.logo))];
+    let cancelled = false;
+
+    Promise.all(
+      urls.map(
+        (url) =>
+          new Promise<void>((resolve) => {
+            const img = new Image();
+            img.onload = () => resolve();
+            img.onerror = () => resolve(); // don't block on broken images
+            img.src = url;
+          }),
+      ),
+    ).then(() => {
+      if (!cancelled) setReady(true);
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [items]);
+
+  return ready;
+}
+
 interface MarqueeRowProps {
   items: typeof clients;
   direction?: "left" | "right"; // left = normal (→ scroll left), right = reverse (→ scroll right)
   dragVelocityRef: React.RefObject<number>;
+  ready: boolean;
 }
 
-function MarqueeRow({ items, direction = "left", dragVelocityRef }: MarqueeRowProps) {
+function MarqueeRow({ items, direction = "left", dragVelocityRef, ready }: MarqueeRowProps) {
   const tripled = [...items, ...items, ...items];
   const trackRef = useRef<HTMLDivElement>(null);
   const offsetRef = useRef(0);
@@ -60,10 +91,12 @@ function MarqueeRow({ items, direction = "left", dragVelocityRef }: MarqueeRowPr
     rafRef.current = requestAnimationFrame(animate);
   }, [baseSpeed]);
 
+  // Start animation only after logos are preloaded
   useEffect(() => {
+    if (!ready) return;
     rafRef.current = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(rafRef.current);
-  }, [animate]);
+  }, [animate, ready]);
 
   const handlePointerDown = useCallback((e: React.PointerEvent) => {
     isDraggingRef.current = true;
@@ -95,7 +128,7 @@ function MarqueeRow({ items, direction = "left", dragVelocityRef }: MarqueeRowPr
 
   return (
     <div
-      className="relative select-none touch-pan-y"
+      className={`relative select-none touch-pan-y transition-opacity duration-500 ${ready ? "opacity-100" : "opacity-0"}`}
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
@@ -137,6 +170,7 @@ function MarqueeRow({ items, direction = "left", dragVelocityRef }: MarqueeRowPr
 export default function Clients() {
   const t = useTranslations("Clients");
   const dragVelocityRef = useRef(0);
+  const logosReady = useLogosReady(row1);
 
   return (
     <section
@@ -158,8 +192,8 @@ export default function Clients() {
           <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 
           <div className="flex flex-col gap-4 md:gap-6">
-            <MarqueeRow items={row1} direction="left" dragVelocityRef={dragVelocityRef} />
-            {/* <MarqueeRow items={row2} direction="right" dragVelocityRef={dragVelocityRef} /> */}
+            <MarqueeRow items={row1} direction="left" dragVelocityRef={dragVelocityRef} ready={logosReady} />
+            {/* <MarqueeRow items={row2} direction="right" dragVelocityRef={dragVelocityRef} ready={logosReady} /> */}
           </div>
         </div>
       </FadeIn>
