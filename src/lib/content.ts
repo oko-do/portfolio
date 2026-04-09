@@ -12,6 +12,7 @@ export interface ProjectFrontmatter {
   year: string;
   role: string;
   coverImage: string;
+  coverPosition?: string;
   gradient: string;
   team?: string;
   award?: string;
