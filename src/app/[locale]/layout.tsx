@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { routing } from "@/i18n/routing";
+import { Analytics } from "@vercel/analytics/next";
 import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -52,6 +53,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           <main className="flex-1 pt-16">{children}</main>
           <ScrollToTop />
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   );
