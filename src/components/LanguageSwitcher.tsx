@@ -21,7 +21,7 @@ export default function LanguageSwitcher() {
         className={`px-2 py-1 rounded transition-colors ${
           locale === "en"
             ? "text-foreground font-medium"
-            : "text-muted-foreground hover:text-foreground"
+            : "text-muted-foreground hover:text-primary"
         }`}
         aria-label="English"
       >
@@ -33,7 +33,7 @@ export default function LanguageSwitcher() {
         className={`px-2 py-1 rounded transition-colors ${
           locale === "ru"
             ? "text-foreground font-medium"
-            : "text-muted-foreground hover:text-foreground"
+            : "text-muted-foreground hover:text-primary"
         }`}
         aria-label="Russian"
       >
