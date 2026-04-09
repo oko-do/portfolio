@@ -48,11 +48,17 @@ The first step was a large-scale UI audit and full reverse-engineering of the le
 
 Organized the design system work into manageable tasks distributed across the design and development team. Created clear component ownership assignments and established regular sync meetings to ensure alignment between design and implementation.
 
-![Flowcharts of action algorithms for different user roles](/images/cases/mckesson/role-action-flowcharts.png)
+![Planning board with task breakdown and component ownership](/images/cases/mckesson/planning.png)
 
 ### Design Token Convention
 
 Established a comprehensive design token convention defining the pipeline from Figma to JSON to GitHub. Created a systematic naming convention and hierarchical token structure that enabled automated synchronization between design tools and the development codebase.
+
+![Design token structure and naming convention scheme](/images/cases/mckesson/tokens-scheme.png)
+
+### Tokenization & GitHub Integration
+
+Tokenized all UI components — colors, typography, spacing, shadows, border-radius, and component-specific tokens. Integrated the token pipeline with GitHub for version control, enabling developers to pull the latest design tokens directly into their build process.
 
 <TokenPipeline
   icon1="figma"
@@ -65,17 +71,17 @@ Established a comprehensive design token convention defining the pipeline from F
   label4="Result displayed in Storybook"
 />
 
-### Tokenization & GitHub Integration
-
-Tokenized all UI components — colors, typography, spacing, shadows, border-radius, and component-specific tokens. Integrated the token pipeline with GitHub for version control, enabling developers to pull the latest design tokens directly into their build process.
-
 ### Storybook Real-Time Review
 
-Set up Storybook as the single source of truth for component implementation, enabling real-time review cycles where designers could verify component fidelity against design specifications without waiting for full application deployments.
+We integrated Storybook as the Single Source of Truth between design and development. This enabled a continuous Design QA process: designers could verify component markup in real time without waiting for full application release builds.
 
 ## Results
 
 Delivered a developer tool for easy UI changes that dramatically reduced the time needed for visual updates. Created a comprehensive client toolkit with documentation and guidelines. Streamlined design-to-development processes and established comprehensive documentation that did not exist before.
+
+![Component documentation and guidelines](/images/cases/mckesson/docs-g.png)
+
+![Design system components library](/images/cases/mckesson/components.png)
 
 ## Key Learnings
 
