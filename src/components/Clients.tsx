@@ -124,7 +124,8 @@ function MarqueeRow({ items, direction = "left", dragVelocityRef }: MarqueeRowPr
               src={client.logo}
               alt={client.name}
               draggable={false}
-              className="h-6 md:h-10 w-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+              loading="eager"
+              className="h-6 md:h-10 w-auto min-w-[60px] md:min-w-[100px] object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 text-transparent"
             />
           </a>
         ))}
