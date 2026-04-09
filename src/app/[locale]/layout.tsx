@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { routing } from "@/i18n/routing";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -38,16 +39,16 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <html lang={locale} className="dark">
-      <head>
-        <script
+      <body
+        className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased min-h-screen flex flex-col bg-background text-foreground`}
+      >
+        <Script
+          id="scroll-and-context"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `history.scrollRestoration="manual";document.addEventListener("contextmenu",function(e){if(e.target.tagName==="IMG")e.preventDefault()})`,
           }}
         />
-      </head>
-      <body
-        className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased min-h-screen flex flex-col bg-background text-foreground`}
-      >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
           <main className="flex-1 pt-16">{children}</main>
