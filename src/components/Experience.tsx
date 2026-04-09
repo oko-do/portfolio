@@ -104,7 +104,7 @@ export default function Experience() {
                               {job.description[locale]}
                             </p>
 
-                            <div>
+                            <div className="max-w-2xl">
                               <ul className="space-y-2">
                                 {job.tasks[locale].map((task, i) => (
                                   <li
