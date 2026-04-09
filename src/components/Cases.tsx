@@ -16,6 +16,7 @@ export default async function Cases() {
     year: p.frontmatter.year,
     gradient: p.frontmatter.gradient,
     coverImage: p.frontmatter.coverImage,
+    coverPosition: p.frontmatter.coverPosition,
     award: p.frontmatter.award,
     protected: p.frontmatter.protected,
   }));

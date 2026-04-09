@@ -14,6 +14,7 @@ interface ProjectData {
   year: string;
   gradient: string;
   coverImage?: string;
+  coverPosition?: string;
   award?: string;
   protected?: boolean;
 }
@@ -33,7 +34,8 @@ export function CasesGrid({ projects }: { projects: ProjectData[] }) {
                   <img
                     src={project.coverImage}
                     alt={project.title}
-                    className="absolute inset-0 w-full h-full object-cover object-top"
+                    className="absolute inset-0 w-full h-full object-cover"
+                    style={{ objectPosition: project.coverPosition || "top" }}
                   />
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center">

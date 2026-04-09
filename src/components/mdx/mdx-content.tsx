@@ -7,13 +7,12 @@ import { TokenPipeline } from "@/components/mdx/token-pipeline";
 
 // Custom MDX components for rich content
 export const mdxComponents = {
-  // Enhanced image component
+  // Enhanced image component with zoom on click
   img: (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
     <figure className="my-8">
       <div className="rounded-lg overflow-hidden border border-border">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          {...props}
+        <ZoomableImage
+          src={props.src || ""}
           alt={props.alt || ""}
           className="w-full h-auto"
         />
