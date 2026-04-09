@@ -3,6 +3,7 @@ import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { ImageCarousel } from "@/components/mdx/image-carousel";
 import { ZoomableImage } from "@/components/mdx/zoomable-image";
+import { TokenPipeline } from "@/components/mdx/token-pipeline";
 
 // Custom MDX components for rich content
 export const mdxComponents = {
@@ -156,6 +157,7 @@ export const mdxComponents = {
   // Custom components
   Badge,
   ImageCarousel,
+  TokenPipeline,
 
   // Callout component
   Callout: ({
