@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { routing } from "@/i18n/routing";
-import Script from "next/script";
+
 import { Analytics } from "@vercel/analytics/next";
 import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -42,9 +42,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased min-h-screen flex flex-col bg-background text-foreground`}
       >
-        <Script
-          id="scroll-and-context"
-          strategy="beforeInteractive"
+        <script
           dangerouslySetInnerHTML={{
             __html: `history.scrollRestoration="manual";document.addEventListener("contextmenu",function(e){if(e.target.tagName==="IMG")e.preventDefault()})`,
           }}
