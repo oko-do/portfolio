@@ -179,7 +179,7 @@ export default function Clients() {
       id="clients"
       className="py-20 border-t border-border overflow-hidden"
     >
-      <div className="px-6 md:px-12 lg:px-24">
+      <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12">
         <FadeIn>
           <h2 className="text-sm text-muted-foreground uppercase tracking-wide mb-10">
             {t("title")}

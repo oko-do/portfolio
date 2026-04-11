@@ -19,7 +19,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="px-6 md:px-12 lg:px-24 py-20 border-t border-border"
+      className="px-6 md:px-8 lg:px-12 py-20 border-t border-border"
     >
       <div>
         <FadeIn>
@@ -28,7 +28,7 @@ export default function Experience() {
           </h2>
         </FadeIn>
 
-        <div className="max-w-5xl mx-auto">
+        <div>
         <div className="space-y-0">
           {experience.map((job, index) => {
             const isOpen = openIndex === index;
@@ -99,12 +99,12 @@ export default function Experience() {
                           )}
 
                           {/* Description + tasks */}
-                          <div className="grid grid-cols-1 md:grid-cols-[276px_1fr] gap-6 md:gap-8">
+                          <div className="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-6 md:gap-8">
                             <p className="text-muted-foreground text-sm leading-relaxed">
                               {job.description[locale]}
                             </p>
 
-                            <div className="max-w-2xl">
+                            <div>
                               <ul className="space-y-2">
                                 {job.tasks[locale].map((task, i) => (
                                   <li

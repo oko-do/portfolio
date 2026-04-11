@@ -11,7 +11,7 @@ export default function Tools() {
   return (
     <section
       id="tools"
-      className="px-6 md:px-12 lg:px-24 py-20 border-t border-border"
+      className="px-6 md:px-8 lg:px-12 py-20 border-t border-border"
     >
       <div>
         <FadeIn>

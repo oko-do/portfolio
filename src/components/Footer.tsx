@@ -9,8 +9,9 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="px-6 md:px-12 lg:px-24 py-8 border-t border-border bg-card">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+    <footer className="border-t border-border bg-card">
+      <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12 py-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-sm text-muted-foreground">
           {currentYear} {about.name[locale]}. {t("location")}
         </p>
@@ -46,6 +47,7 @@ export default function Footer() {
           >
             Telegram
           </a>
+        </div>
         </div>
       </div>
     </footer>

@@ -35,7 +35,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
-      <nav className="px-6 md:px-12 lg:px-24 py-4 flex items-center justify-between">
+        <nav className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12 py-4 flex items-center justify-between">
         <a
           href={`/${locale}`}
           onClick={(e) => {

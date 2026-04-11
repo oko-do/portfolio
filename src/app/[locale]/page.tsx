@@ -17,14 +17,17 @@ export default function HomePage({ params }: Props) {
   setRequestLocale(locale);
 
   return (
-    <>
+    <div className="mx-auto max-w-7xl">
       <Hero />
       <About />
       <Experience />
       <Tools />
-      <Clients />
+      {/* Clients marquee breaks out of container for full-bleed */}
+      <div className="relative -mx-[calc((100vw-100%)/2)] w-screen">
+        <Clients />
+      </div>
       <Cases />
       <Contacts />
-    </>
+    </div>
   );
 }

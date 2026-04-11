@@ -33,13 +33,13 @@ export default function Hero() {
   const locale = useLocale() as "en" | "ru";
 
   return (
-    <section className="min-h-[90vh] flex flex-col justify-center px-6 md:px-12 lg:px-24 py-20">
+    <section className="min-h-[90vh] flex flex-col justify-center px-6 md:px-8 lg:px-12 py-20">
       <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-20">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="max-w-4xl flex-1"
+          className="flex-1"
         >
           <motion.p
             variants={itemVariants}

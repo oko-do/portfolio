@@ -24,7 +24,7 @@ export default async function Cases() {
   return (
     <section
       id="projects"
-      className="px-6 md:px-12 lg:px-24 py-20 border-t border-border"
+      className="px-6 md:px-8 lg:px-12 py-20 border-t border-border"
     >
       <div>
         <h2 className="text-sm text-muted-foreground uppercase tracking-wide mb-8">

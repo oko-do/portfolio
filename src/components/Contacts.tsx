@@ -13,10 +13,10 @@ export default function Contacts() {
   return (
     <section
       id="contact"
-      className="px-6 md:px-12 lg:px-24 py-20 border-t border-border"
+      className="px-6 md:px-8 lg:px-12 py-20 border-t border-border"
     >
       <div>
-        <div className="max-w-4xl">
+        <div>
           <FadeIn>
             <h2 className="text-sm text-muted-foreground uppercase tracking-wide mb-8">
               {t("title")}
