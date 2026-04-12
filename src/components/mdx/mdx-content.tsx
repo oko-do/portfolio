@@ -110,7 +110,9 @@ export const mdxComponents = {
     <a className="text-primary hover:underline" {...props} />
   ),
 
-  // Image grid — 2 columns, supports 2 or 4 images (1 or 2 rows)
+  // Image grid — supports 2-4 columns, 1-8 images
+  // half — render grid at 50% width, left-aligned
+  // cols — number of columns (default 2)
   ImageGrid: ({
     src1,
     alt1,
@@ -120,24 +122,65 @@ export const mdxComponents = {
     alt3,
     src4,
     alt4,
+    src5,
+    alt5,
+    src6,
+    alt6,
+    src7,
+    alt7,
+    src8,
+    alt8,
+    half,
+    columns,
   }: {
     src1: string;
     alt1?: string;
-    src2: string;
+    src2?: string;
     alt2?: string;
     src3?: string;
     alt3?: string;
     src4?: string;
     alt4?: string;
+    src5?: string;
+    alt5?: string;
+    src6?: string;
+    alt6?: string;
+    src7?: string;
+    alt7?: string;
+    src8?: string;
+    alt8?: string;
+    half?: boolean;
+    columns?: number | string;
   }) => {
     const items = [
       { src: src1, alt: alt1 },
-      { src: src2, alt: alt2 },
+      ...(src2 ? [{ src: src2, alt: alt2 }] : []),
       ...(src3 ? [{ src: src3, alt: alt3 }] : []),
       ...(src4 ? [{ src: src4, alt: alt4 }] : []),
+      ...(src5 ? [{ src: src5, alt: alt5 }] : []),
+      ...(src6 ? [{ src: src6, alt: alt6 }] : []),
+      ...(src7 ? [{ src: src7, alt: alt7 }] : []),
+      ...(src8 ? [{ src: src8, alt: alt8 }] : []),
     ];
+    const colCount = Number(columns) || (items.length === 1 ? 1 : 2);
+    // Full class strings so Tailwind 4 scanner can detect them
+    const gridClass = half
+      ? colCount === 4
+        ? "grid grid-cols-4 gap-4 my-8 max-w-[50%]"
+        : colCount === 3
+          ? "grid grid-cols-3 gap-4 my-8 max-w-[50%]"
+          : colCount === 1
+            ? "grid grid-cols-1 gap-4 my-8 max-w-[50%]"
+            : "grid grid-cols-2 gap-4 my-8 max-w-[50%]"
+      : colCount === 4
+        ? "grid grid-cols-4 gap-4 my-8"
+        : colCount === 3
+          ? "grid grid-cols-3 gap-4 my-8"
+          : colCount === 1
+            ? "grid grid-cols-1 gap-4 my-8"
+            : "grid grid-cols-2 gap-4 my-8";
     return (
-      <div className="grid grid-cols-2 gap-4 my-8">
+      <div className={gridClass}>
         {items.map((item, i) => (
           <figure key={i}>
             <div className="rounded-lg overflow-hidden border border-border">
