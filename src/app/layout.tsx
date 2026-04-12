@@ -31,8 +31,12 @@ export const metadata: Metadata = {
       "Senior+ / Lead Product Designer specializing in enterprise UX and design systems.",
   },
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
   },
 };
 
