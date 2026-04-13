@@ -132,6 +132,7 @@ export const mdxComponents = {
     alt8,
     half,
     columns,
+    equalHeight,
   }: {
     src1: string;
     alt1?: string;
@@ -151,7 +152,9 @@ export const mdxComponents = {
     alt8?: string;
     half?: boolean;
     columns?: number | string;
+    equalHeight?: boolean | string;
   }) => {
+    const isEqualHeight = equalHeight === true || equalHeight === "true";
     const items = [
       { src: src1, alt: alt1 },
       ...(src2 ? [{ src: src2, alt: alt2 }] : []),
@@ -182,9 +185,16 @@ export const mdxComponents = {
     return (
       <div className={gridClass}>
         {items.map((item, i) => (
-          <figure key={i}>
-            <div className="rounded-lg overflow-hidden border border-border">
-              <ZoomableImage src={item.src} alt={item.alt || ""} className="w-full h-auto" />
+          <figure key={i} className={isEqualHeight ? "flex flex-col" : undefined}>
+            <div className={isEqualHeight
+              ? "rounded-lg overflow-hidden border border-border flex-1"
+              : "rounded-lg overflow-hidden border border-border"
+            }>
+              <ZoomableImage
+                src={item.src}
+                alt={item.alt || ""}
+                className={isEqualHeight ? "w-full h-full object-cover object-top" : "w-full h-auto"}
+              />
             </div>
             {item.alt && (
               <figcaption className="text-sm text-muted-foreground text-left mt-3">
