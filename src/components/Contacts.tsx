@@ -50,7 +50,7 @@ export default function Contacts() {
               </a>
             </Button>
 
-            <div className="md:ml-auto flex items-center gap-4">
+            <div className="md:ml-auto flex flex-wrap items-center gap-4">
               <a
                 href={`https://t.me/${about.telegram.replace("@", "")}`}
                 target="_blank"
