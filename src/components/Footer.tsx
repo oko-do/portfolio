@@ -40,6 +40,14 @@ export default function Footer() {
             Behance
           </a>
           <a
+            href="https://spb.hh.ru/resume/efd877f7ff0cadddd90039ed1f4e7451766551"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            hh.ru
+          </a>
+          <a
             href={`https://t.me/${about.telegram.replace("@", "")}`}
             target="_blank"
             rel="noopener noreferrer"
