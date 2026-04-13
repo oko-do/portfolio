@@ -29,6 +29,8 @@ function useLogosReady(items: typeof clients) {
             img.onload = () => resolve();
             img.onerror = () => resolve(); // don't block on broken images
             img.src = url;
+            // Handle already-cached images where onload won't fire
+            if (img.complete) resolve();
           }),
       ),
     ).then(() => {
