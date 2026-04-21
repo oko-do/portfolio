@@ -41,7 +41,7 @@ export default function Contacts() {
 
             <Button variant="outline" size="lg" asChild>
               <a
-                href={about.cvLink}
+                href={about.cvLink[locale]}
                 target="_blank"
                 rel="noopener noreferrer"
               >

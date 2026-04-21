@@ -243,5 +243,8 @@ export const about = {
   telegram: "@KonstantinDol",
   linkedin: "https://www.linkedin.com/in/okodo",
   behance: "https://www.behance.net/keloid",
-  cvLink: "https://drive.google.com/file/d/12yEiiAcqMRP82Nk6_LgrvRvf-4jw2F5h/view?usp=share_link",
+  cvLink: {
+    ru: "https://drive.google.com/file/d/12yEiiAcqMRP82Nk6_LgrvRvf-4jw2F5h/view?usp=share_link",
+    en: "https://drive.google.com/file/d/1UNk3-PdmLsFQvaBJrqeTXWR79CGx9I2S/view?usp=share_link",
+  },
 };
