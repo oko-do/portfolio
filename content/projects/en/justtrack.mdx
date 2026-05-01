@@ -22,17 +22,42 @@ Justtrack is a comprehensive mobile measurement and marketing automation platfor
 
 ## The Challenge
 
-Build a scalable design system to keep the platform consistent, fast, and easy to use. Reimagine platform navigation with an app-centric approach. Redesign Smart Diagnostic Insights.
-
-## My Role
-
-Senior Product Designer responsible for design system leadership, navigation & information architecture, and data & insights UX. Driving consistency across the platform and collaborating closely with engineering and product teams to deliver cohesive user experiences.
+My main tasks were to bring order to the interface: I designed and implemented a scalable design system. The goal was to make the platform more intuitive and reduce cognitive load on users, as well as develop a number of new features from scratch (for example, launching the AI-powered Smart Insights module with new analytics interaction patterns). Additionally, I conducted a usability audit of problem areas, optimising filtering and data perception where users previously struggled.
 
 ## Process
 
 ### Design System Audit & Foundation
 
-Conducted a comprehensive audit of existing UI components across the platform, identified inconsistencies, and established a foundational token-based design system with shared primitives, color scales, spacing, and typography.
+We conducted a comprehensive audit of UI components across the platform, identifying critical inconsistencies. Based on the audit, a detailed documentation and categorisation system was created, which became the foundation for future roadmap planning. We aimed to group related UX/UI issues into unified clusters. All recorded findings were categorised accordingly, and design tickets were created based on this analysis.
+
+![UX audit: interface problem areas overview](/images/cases/justtrack/audit-ux-review.png)
+
+### Building the Design System
+
+Working on the system wasn't just "drawing components" — it was about building a bridge between design and engineering. The process looked like this:
+
+1. **Reverse engineering & inventory.** We started with "excavations" — conducted a full platform audit, catalogued every unique element, and built a component registry. To avoid getting lost in the details, we used Atomic Design methodology, breaking everything down into Atoms, Molecules, and Organisms.
+
+![Design system components registry](/images/cases/justtrack/design-system-components-list.png)
+
+2. **Prioritisation & strategy.** We didn't try to do everything at once. We prioritised and started from the base — atoms (colours, fonts, buttons). For each element we ran a series of refinements, consulting closely with developers to ensure our Figma decisions mapped naturally to their stack (a mix of React MUI and custom solutions).
+
+![GitLab ticket selection for design system tasks](/images/cases/justtrack/select-ticket-gitlab.png)
+
+3. **Shared workspace (Kanban).** To keep the process transparent, we set up a shared Kanban board in GitLab. Product Owners were involved — during review stages they helped align our ideas with business goals and shared improvement requests.
+
+4. **Code sync & competitive analysis.** We studied best practices on the market, but our engineers were the primary reference point. We met development halfway, adapting the Figma structure to match code logic and minimise friction during handoff.
+
+![Selects UI matrix from Figma](/images/cases/justtrack/selects-ui-matrix-from-figma.png)
+
+5. **Quality control & Source of Truth.** After each implementation I conducted a Design Review, verifying that production matched the intent. After implementing several Atomic components, we decided to create a Storybook — now our primary source of truth.
+
+<ImageGrid
+  src1="/images/cases/justtrack/storybook-menuitem-example.png"
+  alt1="Storybook: MenuItem component example"
+  src2="/images/cases/justtrack/storybook-documentation-menuitem.png"
+  alt2="Storybook: MenuItem component documentation"
+/>
 
 <ImageGrid
   src1="/images/cases/justtrack/design-system-components.png"
@@ -41,21 +66,40 @@ Conducted a comprehensive audit of existing UI components across the platform, i
   alt2="Design system: token definitions and scales"
 />
 
-### Navigation Reimagination
+### Navigation Redesign: Shift to an App-Centric Model
 
-Researched user workflows and identified pain points in the existing navigation structure. Proposed and validated an app-centric navigation model that reduces cognitive load and allows users to switch context between apps seamlessly.
+**Problem:** The previous navigation was overloaded both visually and functionally, creating excessive cognitive load. The use of dozens of filters was tailored to a narrow group of top managers, while interaction paths for regular users remained inconsistent and confusing.
 
-![Original navigation structure with loaded funnel progression view](/images/cases/justtrack/old-navi.png)
+<ImageGrid
+  src1="/images/cases/justtrack/old-navi.png"
+  alt1="Old navigation structure with loaded funnel progression view"
+  src2="/images/cases/justtrack/old-navi-funnel.png"
+  alt2="Old navigation: funnel progression detail"
+/>
 
-![Old navigation: funnel progression detail](/images/cases/justtrack/old-navi-funnel.png)
+**Research & insights:** We analysed user workflows, studied competitors, and conducted surveys with our audience. It turned out that most users don't need global segmentation — they work with 1–2 specific apps. Based on this data, we refined user personas and focused on their real use cases.
+
+**Solution:** An app-centric model was proposed and validated, allowing users to switch between tasks seamlessly.
 
 ![New navigation: final implementation](/images/cases/justtrack/new-navigation.png)
+
+Key changes:
+
+**Contextual management:** We moved away from a complex filter system in favour of working within the context of the selected app. This made the interface visually cleaner and statistics easier to digest.
+
+**Two-level hierarchy:** To clearly separate access levels, we introduced two-layer navigation.
+
+**Colour coding:** To help users instantly understand their current context, levels were visually differentiated: blue was assigned to individual app interfaces, and yellow to the corporate level (business units).
 
 ### UX Research
 
 ![UX research: user workflow analysis and insight mapping](/images/cases/justtrack/ux-research.png)
 
-### Smart Diagnostic Insights Redesign
+![UX interviews: user sessions](/images/cases/justtrack/ux_interview.png)
+
+![Dovetail: organising and analysing research data](/images/cases/justtrack/dovetail.png)
+
+### Smart Insights Feature Design
 
 Redesigned the diagnostic insights module to surface actionable data faster, introducing progressive disclosure patterns, contextual tooltips, and streamlined data visualization for complex attribution metrics.
 
