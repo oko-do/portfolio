@@ -55,7 +55,7 @@ export function CasesGrid({ projects }: { projects: ProjectData[] }) {
               <div className="p-6 flex flex-col">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex flex-wrap gap-2">
-                    {project.tags.slice(0, 2).map((tag) => (
+                    {project.tags.map((tag) => (
                       <Badge
                         key={tag}
                         variant="outline"
