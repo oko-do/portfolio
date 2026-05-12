@@ -221,8 +221,8 @@ export const about = {
     ru: "Константин Долгов",
   },
   role: {
-    en: "Lead Product Designer",
-    ru: "Lead продуктовый дизайнер",
+    en: "Senior / Lead Product Designer",
+    ru: "Senior / Lead продуктовый дизайнер",
   },
   location: {
     en: "Hamburg, Germany",
