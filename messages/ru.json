@@ -63,11 +63,12 @@
     "ndaError": "Неверный пароль. Попробуйте ещё раз.",
     "ndaBack": "Назад",
     "ndaBadge": "NDA",
-    "homePasswordTitle": "Портфолио закрыто",
-    "homePasswordDescription": "Введите пароль, чтобы продолжить.",
-    "homePasswordPlaceholder": "Пароль",
-    "homePasswordSubmit": "Войти",
+    "homePasswordTitle": "Restricted Access",
+    "homePasswordDescription": "Большинство моих работ находятся под NDA. Для просмотра полной версии портфолио требуется авторизация.",
+    "homePasswordPlaceholder": "Password",
+    "homePasswordSubmit": "Enter",
     "homePasswordError": "Неверный пароль. Попробуйте ещё раз.",
+    "homePasswordNoPassword": "У меня нет пароля",
     "repository": "Репозиторий",
     "website": "Сайт"
   }

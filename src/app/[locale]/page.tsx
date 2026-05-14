@@ -27,6 +27,7 @@ export default async function HomePage({ params }: Props) {
         placeholder: t("homePasswordPlaceholder"),
         submit: t("homePasswordSubmit"),
         error: t("homePasswordError"),
+        noPassword: t("homePasswordNoPassword"),
       }}
     >
       <div className="mx-auto max-w-7xl">

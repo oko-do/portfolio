@@ -63,11 +63,12 @@
     "ndaError": "Incorrect password. Please try again.",
     "ndaBack": "Back",
     "ndaBadge": "NDA",
-    "homePasswordTitle": "Portfolio is private",
-    "homePasswordDescription": "Enter the password to continue.",
+    "homePasswordTitle": "Restricted Access",
+    "homePasswordDescription": "Most of my work is under NDA. Authorization is required to view the full portfolio.",
     "homePasswordPlaceholder": "Password",
     "homePasswordSubmit": "Enter",
     "homePasswordError": "Incorrect password. Please try again.",
+    "homePasswordNoPassword": "I don't have a password",
     "repository": "Repository",
     "website": "Website"
   }

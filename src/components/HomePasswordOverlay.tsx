@@ -12,6 +12,7 @@ interface HomePasswordOverlayProps {
     placeholder: string;
     submit: string;
     error: string;
+    noPassword: string;
   };
   children: React.ReactNode;
 }
@@ -157,6 +158,15 @@ export function HomePasswordOverlay({
                 >
                   {translations.submit}
                 </Button>
+
+                <a
+                  href="https://t.me/KonstantinDol"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block mt-4 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  {translations.noPassword}
+                </a>
               </form>
             </motion.div>
           </motion.div>
