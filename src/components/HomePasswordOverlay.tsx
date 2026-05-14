@@ -17,7 +17,7 @@ interface HomePasswordOverlayProps {
   children: React.ReactNode;
 }
 
-const HOME_PASSWORD = "okodo";
+const HOME_PASSWORD = "okodo1";
 const STORAGE_KEY = "home-unlocked";
 
 function isHomeUnlocked(): boolean {
