@@ -17,7 +17,7 @@ type Props = {
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations("cases");
+  const t = await getTranslations("CasePage");
 
   return (
     <HomePasswordOverlay
