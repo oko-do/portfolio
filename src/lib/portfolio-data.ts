@@ -32,7 +32,7 @@ export const experience: Experience[] = [
           en: "Senior Product Designer",
           ru: "Senior Product designer",
         },
-        period: { en: "2025 — Present", ru: "2025 — наст. время" },
+        period: { en: "2025 – 2026", ru: "2025 – 2026" },
       },
     ],
     tasks: {
