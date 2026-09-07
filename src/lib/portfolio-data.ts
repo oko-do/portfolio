@@ -37,11 +37,10 @@ export const experience: Experience[] = [
     ],
     tasks: {
       en: [
-        "I build a scalable design system to keep the platform consistent, fast, and easy to use.",
-        "Reimagining the navigation to be app-centric, ensuring users can manage their growth and analytics from a more intuitive, product-focused perspective.",
-        'I am as well redesigning "Smart Diagnostic Insights" to help users instantly understand why their performance is changing. By organizing notifications and highlighting only the most important issues, I help users avoid "alert fatigue" and take action through simple, data-driven tools.',
+        "Built a scalable design system to keep the platform consistent, fast, easy-to-use and significantly reducing delivery time. Reimagined legacy UI and UX patterns, ensuring users can manage their growth and analytics from a more intuitive, task-oriented workflow.",
+        "Designed \"Smart Diagnostic Insights\" to help users understand performance changes instantly, reducing \"alert fatigue\" through simple, data-driven tools.",
         "Integrated Storybook into the design-to-development handoff process, minimizing tech debt and component discrepancies.",
-        "Designing concepts and prototypes with AI tools integrated into the design pipeline.",
+        "Designed concepts and prototypes utilizing AI tools integrated directly into the design pipeline.",
       ],
       ru: [
         "Спроектировал и внедрил дизайн-систему, которая обеспечила консистентность платформы и ускорила темпы разработки в 3 раза.",
