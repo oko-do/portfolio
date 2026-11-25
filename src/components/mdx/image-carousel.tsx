@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 import { useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
@@ -30,6 +32,7 @@ interface ImageCarouselProps {
 }
 
 export function ImageCarousel(props: ImageCarouselProps) {
+  const t = useTranslations("Common");
   const slides: Slide[] = [];
 
   for (let i = 1; i <= 8; i++) {
@@ -75,14 +78,14 @@ export function ImageCarousel(props: ImageCarouselProps) {
             <button
               onClick={prev}
               className="w-7 h-7 flex items-center justify-center text-foreground hover:text-primary transition-colors cursor-pointer"
-              aria-label="Previous slide"
+              aria-label={t("previousSlide")}
             >
               <ArrowLeft className="w-4 h-4" />
             </button>
             <button
               onClick={next}
               className="w-7 h-7 flex items-center justify-center text-foreground hover:text-primary transition-colors cursor-pointer"
-              aria-label="Next slide"
+              aria-label={t("nextSlide")}
             >
               <ArrowRight className="w-4 h-4" />
             </button>

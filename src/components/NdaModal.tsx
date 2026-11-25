@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Lock, Eye, EyeOff, ArrowLeft } from "lucide-react";
@@ -41,6 +43,7 @@ function setUnlockedSlug(slug: string) {
 }
 
 export function NdaModal({ slug, translations, children }: NdaModalProps) {
+  const common = useTranslations("Common");
   const [isLocked, setIsLocked] = useState(true);
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
@@ -136,6 +139,7 @@ export function NdaModal({ slug, translations, children }: NdaModalProps) {
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
+                    aria-label={common(showPassword ? "hidePassword" : "showPassword")}
                     className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
                     tabIndex={-1}
                   >
@@ -164,6 +168,7 @@ export function NdaModal({ slug, translations, children }: NdaModalProps) {
                   <button
                     type="button"
                     onClick={() => router.push("/")}
+                    aria-label={translations.back}
                     className="flex items-center justify-center h-12 w-12 shrink-0 rounded-lg border border-border bg-card text-muted-foreground hover:bg-white hover:text-black hover:border-white transition-colors"
                   >
                     <ArrowLeft className="h-5 w-5" />

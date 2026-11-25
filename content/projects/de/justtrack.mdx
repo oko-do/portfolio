@@ -1,0 +1,131 @@
+---
+id: justtrack
+title: "JustTrack – Plattform für Mobile Measurement und Marketingautomatisierung"
+client: "JustTrack"
+description: "Aufbau eines skalierbaren Designsystems und Neugestaltung der Navigation einer umfassenden Plattform für Mobile Measurement und Marketingautomatisierung."
+tags:
+  - Web-App
+  - Designsystem
+  - KI
+  - Dashboard
+  - Tokenisierung
+year: "2025 – heute"
+role: "Senior Product Designer"
+coverImage: /images/cases/justtrack/cover.png
+gradient: "from-orange-500/20 to-amber-500/20"
+team: "4 UX/UI-Designer, 20 Frontend-/Backend-Entwickler, Product Owner"
+published: true
+protected: true
+order: 1
+---
+
+## über das Projekt
+
+Justtrack ist eine umfassende Plattform für Mobile Measurement und Marketingautomatisierung (MMP+), die App- und Spiele-Publisher beim weltweiten Wachstum unterstützt. Sie vereint fortschrittliche Attribution, Monetarisierungsanalysen in Echtzeit und automatisierte Kampagnenoptimierung in einem leistungsstarken Dashboard.
+
+## Die Herausforderung
+
+Meine Hauptaufgabe war es, Ordnung in die Benutzeroberfläche zu bringen: Ich entwarf und implementierte ein skalierbares Designsystem. Ziel war eine intuitivere Plattform mit geringerer kognitiver Belastung sowie die Entwicklung mehrerer neuer Funktionen von Grund auf, etwa des KI-gestützten Smart-Insights-Moduls mit neuen Interaktionsmustern für Analysen. Zusätzlich führte ich ein Usability-Audit problematischer Bereiche durch und optimierte Filter und Datendarstellung dort, wo Nutzer zuvor Schwierigkeiten hatten.
+
+## Vorgehen
+
+### Audit und Grundlagen des Designsystems
+
+Wir führten ein umfassendes Audit der UI-Komponenten auf der gesamten Plattform durch und identifizierten wesentliche Inkonsistenzen. Daraus entstand ein detailliertes Dokumentations- und Kategorisierungssystem als Grundlage für die weitere Roadmap. Zusammenhängende UX/UI-Probleme wurden in gemeinsame Cluster eingeordnet. Alle Erkenntnisse wurden entsprechend kategorisiert und in Design-Tickets überführt.
+
+![UX-Audit: Übersicht problematischer Oberflächenbereiche](/images/cases/justtrack/audit-ux-review.png)
+
+### Aufbau des Designsystems
+
+Bei der Arbeit am System ging es um mehr als das Zeichnen von Komponenten: Wir bauten eine Brücke zwischen Design und Entwicklung. Der Prozess sah so aus:
+
+1. **Reverse Engineering und Bestandsaufnahme.** Wir begannen mit einer gründlichen Untersuchung: Die gesamte Plattform wurde geprüft, jedes eigenständige Element katalogisiert und ein Komponentenregister aufgebaut. Um den Überblick zu behalten, nutzten wir Atomic Design und gliederten alles in Atome, Moleküle und Organismen.
+
+![Komponentenregister des Designsystems](/images/cases/justtrack/design-system-components-list.png)
+
+2. **Priorisierung und Strategie.** Wir priorisierten die Aufgaben und begannen mit den Grundlagen: Atomen wie Farben, Schriften und Buttons. Jedes Element wurde in mehreren Schritten verfeinert. Dabei stimmten wir uns eng mit den Entwicklern ab, damit unsere Figma-Entscheidungen zu ihrem Stack aus React MUI und individuellen Lösungen passten.
+
+![Auswahl von GitLab-Tickets für Designsystem-Aufgaben](/images/cases/justtrack/select-ticket-gitlab.png)
+
+3. **Gemeinsamer Arbeitsbereich (Kanban).** Für einen transparenten Prozess richteten wir ein gemeinsames Kanban-Board in GitLab ein. Product Owner wurden einbezogen: In Review-Phasen halfen sie, unsere Ideen auf Geschäftsziele abzustimmen, und brachten Verbesserungsvorschläge ein.
+
+4. **Abgleich mit dem Code und Wettbewerbsanalyse.** Wir untersuchten bewährte Marktpraktiken, doch unsere Entwickler waren die wichtigste Orientierung. Wir passten die Figma-Struktur an die Codelogik an, um Reibungsverluste bei der Übergabe zu minimieren.
+
+![UI-Matrix für Auswahlfelder aus Figma](/images/cases/justtrack/selects-ui-matrix-from-figma.png)
+
+5. **Qualitätskontrolle und verbindliche Referenz.** Nach jeder Implementierung führte ich ein Design-Review durch und prüfte, ob die produktive Umsetzung dem Entwurf entsprach. Nach der Umsetzung mehrerer atomarer Komponenten entschieden wir uns für Storybook – heute unsere zentrale verbindliche Referenz.
+
+<ImageGrid
+  src1="/images/cases/justtrack/storybook-menuitem-example.png"
+  alt1="Storybook: Beispiel der MenuItem-Komponente"
+  src2="/images/cases/justtrack/storybook-documentation-menuitem.png"
+  alt2="Storybook: Dokumentation der MenuItem-Komponente"
+/>
+
+<ImageGrid
+  src1="/images/cases/justtrack/design-system-components.png"
+  alt1="Designsystem: Übersicht der Komponentenbibliothek"
+  src2="/images/cases/justtrack/design-system-tokens.png"
+  alt2="Designsystem: Token-Definitionen und Skalen"
+/>
+
+### Neue Navigation: Wechsel zu einem appzentrierten Modell
+
+**Problem:** Die bisherige Navigation war visuell und funktional überladen und verursachte eine hohe kognitive Belastung. Dutzende Filter waren auf eine kleine Gruppe von Führungskräften zugeschnitten, während die Wege für reguläre Nutzer inkonsistent und unübersichtlich blieben.
+
+<ImageGrid
+  src1="/images/cases/justtrack/old-navi.png"
+  alt1="Alte Navigationsstruktur mit umfangreicher Funnel-Ansicht"
+  src2="/images/cases/justtrack/old-navi-funnel.png"
+  alt2="Alte Navigation: Detailansicht des Funnel-Verlaufs"
+/>
+
+**Forschung und Erkenntnisse:** Wir analysierten Arbeitsabläufe, untersuchten Wettbewerber und befragten unsere Zielgruppe. Dabei zeigte sich, dass die meisten Nutzer keine globale Segmentierung benötigen: Sie arbeiten mit ein bis zwei konkreten Apps. Auf dieser Grundlage präzisierten wir die Personas und konzentrierten uns auf reale Anwendungsfälle.
+
+**Lösung:** Wir schlugen ein appzentriertes Modell vor und validierten es. Damit können Nutzer nahtlos zwischen Aufgaben wechseln.
+
+![Neue Navigation: finale Umsetzung](/images/cases/justtrack/new-navigation.png)
+
+![Plattformnavigation: Statistikübersicht für die ausgewählte App](/images/cases/justtrack/navi.jpg)
+
+Wesentliche Änderungen:
+
+**Kontextbezogene Steuerung:** Anstelle eines komplexen Filtersystems wird im Kontext der ausgewählten App gearbeitet. Dadurch wurde die Oberfläche übersichtlicher und die Statistik leichter verständlich.
+
+**Zweistufige Hierarchie:** Zur klaren Trennung der Zugriffsebenen führten wir eine zweistufige Navigation ein.
+
+**Farbcodierung:** Die Ebenen wurden visuell unterschieden, damit Nutzer ihren aktuellen Kontext sofort erkennen: Blau kennzeichnet einzelne App-Oberflächen, Gelb die Unternehmensebene mit ihren Geschäftsbereichen.
+
+### UX-Forschung und iteratives Prototyping
+
+Wir führten regelmäßig moderierte Tiefeninterviews mit Nutzern verschiedener Rollen durch, um über reine Analysezahlen hinauszugehen. Als Testgrundlage nutzte ich einen funktionsfähigen Prototyp aus AI Studio mit neuer Navigation, Filtern und weiteren Werkzeugen. Wir baten die Nutzer, ihren typischen Arbeitstag zu schildern und zentrale Szenarien in der neuen Oberfläche zu durchlaufen. So erfassten wir unmittelbar die Umwege und Abkürzungen, auf die sie im alten System angewiesen waren. Anhand dieser Erkenntnisse überarbeiteten wir den Prototyp zügig und schärften die Produktvision. Die finale Lösung sollte modern aussehen und zugleich den Arbeitsalltag spürbar vereinfachen.
+
+![UX-Forschung: Analyse von Arbeitsabläufen und Zuordnung von Erkenntnissen](/images/cases/justtrack/ux-research.png)
+
+![UX-Interviews: Gespräche mit Nutzern](/images/cases/justtrack/ux_interview.png)
+
+![Dovetail: Organisation und Analyse von Forschungsdaten](/images/cases/justtrack/dovetail.png)
+
+### Smart Insights: Automatisierte Ursachenanalyse
+
+Die zentrale Herausforderung war die Gestaltung eines neuen Moduls, das Dutzende verstreuter Benachrichtigungen in einen kompakten Feed priorisierter Erkenntnisse verwandelt. Dadurch entfielen visuelles Rauschen und die manuelle Suche nach Anomalien in allgemeinen Dashboards. Die Lösung basiert auf ML-gestützten Analysen, die Abweichungen zwischen Prognosen und tatsächlichen Werten sichtbar machen.
+
+![Smart Insights: Gesamtübersicht des Moduls](/images/cases/justtrack/smart_insights_full.png)
+
+Das Herzstück des Designs ist eine interaktive Karte mit einem 14-tägigen Soll-Ist-Vergleich. Für vertiefende Untersuchungen dient eine adaptive Tabelle mit einer dreistufigen Hierarchie, beispielsweise App → Partner → Land.
+
+![Typisches Smart-Insight-Beispiel: mehrere betroffene Apps](/images/cases/justtrack/diagnostics-table.png)
+
+## Zentrale Ergebnisse
+
+- Implementierung eines skalierbaren Designsystems, das die Markteinführung neuer Funktionen beschleunigte und visuelle Konsistenz im gesamten Ökosystem sicherstellte.
+
+- Vollständige Neugestaltung des Navigationsmodells mit einer modernen, appzentrierten UX.
+
+- Entwicklung des Smart-Insights-Moduls von Grund auf, das Rohdaten in handlungsrelevante Erkenntnisse für Nutzer verwandelt.
+
+- Bessere Verständlichkeit der Informationen durch neugestaltete Filtersysteme und intuitive Interaktion mit Daten.
+
+- KI-gestütztes Prototyping: Einführung eines Prozesses zum schnellen Aufbau und Testen funktionsfähiger Prototypen mit Google AI Studio. Dadurch ließen sich komplexe Produkthypothesen frühzeitig ohne Frontend-Ressourcen validieren.
+
+- Integration von Claude in die Verwaltung des Designsystems zur automatisierten Dokumentation, Generierung von Design-Tokens und Prüfung der Komponentenkonsistenz.

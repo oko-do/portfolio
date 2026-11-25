@@ -1,11 +1,13 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import type { Locale } from "@/i18n/routing";
+import { useLocale, useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/badge";
 import { about } from "@/lib/portfolio-data";
 import { FadeIn } from "./FadeIn";
 
 export default function About() {
+  const locale = useLocale() as Locale;
   const t = useTranslations("About");
 
   return (
@@ -28,7 +30,7 @@ export default function About() {
 
         <FadeIn delay={0.2}>
           <div className="flex flex-wrap gap-2">
-            {about.expertise.map((skill) => (
+            {about.expertise[locale].map((skill) => (
               <Badge
                 key={skill}
                 variant="secondary"

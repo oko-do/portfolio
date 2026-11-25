@@ -1,6 +1,7 @@
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { routing } from "@/i18n/routing";
 
@@ -25,6 +26,26 @@ type Props = {
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) notFound();
+  const t = await getTranslations({ locale, namespace: "Metadata" });
+  const title = t("title");
+  const description = t("description");
+  return {
+    title,
+    description,
+    openGraph: {
+      type: "website",
+      locale: { en: "en_US", ru: "ru_RU", de: "de_DE" }[locale],
+      title,
+      description,
+      siteName: "Konstantin Dolgov Portfolio",
+    },
+    twitter: { card: "summary_large_image", title, description },
+  };
 }
 
 export default async function LocaleLayout({ children, params }: Props) {

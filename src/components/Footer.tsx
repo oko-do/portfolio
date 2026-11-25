@@ -1,11 +1,13 @@
 "use client";
 
+import type { Locale } from "@/i18n/routing";
+
 import { useTranslations, useLocale } from "next-intl";
 import { about } from "@/lib/portfolio-data";
 
 export default function Footer() {
   const t = useTranslations("Footer");
-  const locale = useLocale() as "en" | "ru";
+  const locale = useLocale() as Locale;
   const currentYear = new Date().getFullYear();
 
   return (

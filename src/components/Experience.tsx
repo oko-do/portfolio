@@ -1,5 +1,7 @@
 "use client";
 
+import type { Locale } from "@/i18n/routing";
+
 import { useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { experience } from "@/lib/portfolio-data";
@@ -9,7 +11,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function Experience() {
   const t = useTranslations("Experience");
-  const locale = useLocale() as "en" | "ru";
+  const locale = useLocale() as Locale;
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggle = (index: number) => {

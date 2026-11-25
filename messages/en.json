@@ -4,7 +4,8 @@
     "experience": "Experience",
     "work": "Work",
     "contacts": "Contact",
-    "downloadCV": "Download CV"
+    "downloadCV": "Download CV",
+    "language": "Select language"
   },
   "Hero": {
     "viewCases": "View Cases",
@@ -71,5 +72,19 @@
     "homePasswordNoPassword": "I don't have a password",
     "repository": "Repository",
     "website": "Website"
+  },
+  "Common": {
+    "close": "Close",
+    "previousSlide": "Previous slide",
+    "nextSlide": "Next slide",
+    "scrollToTop": "Scroll to top",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password"
+  },
+  "Metadata": {
+    "title": "Konstantin Dolgov | Senior Product Designer",
+    "description": "Senior+ / Lead Product Designer based in Hamburg, Germany. Specializing in enterprise UX, design systems, and complex B2B products for clients like Huawei, Google, and ADNOC."
   }
 }

@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 import { useState, useEffect, useCallback } from "react";
 import { X } from "lucide-react";
 
@@ -10,6 +12,7 @@ interface ZoomableImageProps {
 }
 
 export function ZoomableImage({ src, alt, className }: ZoomableImageProps) {
+  const t = useTranslations("Common");
   const [open, setOpen] = useState(false);
 
   const close = useCallback(() => setOpen(false), []);
@@ -45,7 +48,7 @@ export function ZoomableImage({ src, alt, className }: ZoomableImageProps) {
           <button
             onClick={close}
             className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-white/70 hover:text-white transition-colors cursor-pointer"
-            aria-label="Close"
+            aria-label={t("close")}
           >
             <X className="w-6 h-6" />
           </button>

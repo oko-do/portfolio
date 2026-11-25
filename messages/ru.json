@@ -4,7 +4,8 @@
     "experience": "Опыт",
     "work": "Проекты",
     "contacts": "Контакты",
-    "downloadCV": "Скачать CV"
+    "downloadCV": "Скачать CV",
+    "language": "Выбрать язык"
   },
   "Hero": {
     "viewCases": "Смотреть кейсы",
@@ -71,5 +72,19 @@
     "homePasswordNoPassword": "У меня нет пароля",
     "repository": "Репозиторий",
     "website": "Сайт"
+  },
+  "Common": {
+    "close": "Закрыть",
+    "previousSlide": "Предыдущий слайд",
+    "nextSlide": "Следующий слайд",
+    "scrollToTop": "Наверх",
+    "openMenu": "Открыть меню",
+    "closeMenu": "Закрыть меню",
+    "showPassword": "Показать пароль",
+    "hidePassword": "Скрыть пароль"
+  },
+  "Metadata": {
+    "title": "Константин Долгов | Senior Product Designer",
+    "description": "Senior+ / Lead продуктовый дизайнер из Гамбурга, Германия. Специализируюсь на корпоративном UX, дизайн-системах и сложных B2B-продуктах для Huawei, Google и ADNOC."
   }
 }

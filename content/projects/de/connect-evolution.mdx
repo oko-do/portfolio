@@ -1,0 +1,88 @@
+---
+id: connect-evolution
+title: "Connect Evolution – Designsystem für McKesson"
+client: "McKesson (über EPAM)"
+description: "Modernisierung der Oberfläche einer globalen Bestandsanwendung für den pharmazeutischen Großhandelseinkauf mithilfe von Design-Tokens."
+tags:
+  - Designsystem
+  - Tokenisierung
+year: "2023"
+role: "Lead Designer"
+coverImage: /images/cases/mckesson/cover.png
+gradient: "from-pink-500/20 to-rose-500/20"
+team: "3 UX/UI-Designer, 1 Business Analyst, 3 Frontend-Entwickler"
+published: true
+order: 4
+---
+
+## über das Projekt
+
+Die McKesson Corporation vertreibt Arzneimittel und bietet IT-Lösungen für das Gesundheitswesen, Medizinbedarf und Werkzeuge für das Versorgungsmanagement an. Das Unternehmen liefert ein Drittel aller in Nordamerika verwendeten Arzneimittel. Connect Evolution ist die Designsystem-Initiative für die globale Plattform zur Verwaltung des Großhandelseinkaufs.
+
+## Die Herausforderung
+
+Innerhalb von sechs Monaten ein Designsystem nahtlos in eine globale Bestandsanwendung ohne jegliche Dokumentation integrieren. Dazu waren vollständiges Reverse Engineering und ein 1:1-Refactoring der bestehenden Oberfläche erforderlich. Die Architektur des Designsystems musste in Figma von Grund auf entstehen. Gleichzeitig benötigten Entwickler eine klare Migrationslogik: Regeln und Muster für den Austausch alter Komponenten durch neue.
+
+![Beispielansicht der Bestandsanwendung vor der Neugestaltung](/images/cases/mckesson/legacy-application-screen.png)
+
+<ImageGrid
+  src1="/images/cases/mckesson/legacy-application-screen-1.png"
+  alt1="Bestandsanwendung: Detailansicht der Einkaufsoberfläche"
+  src2="/images/cases/mckesson/legacy-application-screen-2.png"
+  alt2="Bestandsanwendung: Ablauf der Auftragsverwaltung"
+/>
+
+## Meine Rolle
+
+Als Lead Designer verantwortete ich die Analyse der bestehenden Oberfläche, die Umsetzungsplanung, die Tokenisierung von UI-Komponenten, die Storybook-Integration und die effektive Zusammenarbeit zwischen Design und Entwicklung im gesamten Projekt.
+
+## Vorgehen
+
+### Discovery – Analyse bestehender UI-Muster
+
+Der erste Schritt war ein umfassendes UI-Audit mit vollständigem Reverse Engineering der bestehenden Oberfläche. Da keinerlei Dokumentation vorlag, mussten wir das System manuell aufschlüsseln: sämtliche UI-Komponenten, Rastervarianten und Interaktionsmuster in der Anwendung identifizieren und katalogisieren.
+
+![Übersichten bestehender Anwendungsansichten als Grundlage der Analyse](/images/cases/mckesson/legacy-screen-maps.png)
+
+### Aufgabenplanung und Zusammenarbeit im Team
+
+Ich gliederte die Arbeit am Designsystem in überschaubare Aufgaben für das Design- und Entwicklungsteam. Klare Zuständigkeiten für Komponenten und regelmäßige Abstimmungstermine stellten sicher, dass Design und Implementierung übereinstimmten.
+
+![Planungsboard mit Aufgabenaufteilung und Komponentenzuständigkeiten](/images/cases/mckesson/planning.png)
+
+### Konventionen für Design-Tokens
+
+Ich etablierte umfassende Konventionen für Design-Tokens und definierte die Pipeline von Figma über JSON bis GitHub. Eine systematische Benennung und eine hierarchische Token-Struktur ermöglichten die automatische Synchronisierung zwischen Designtools und Codebasis.
+
+![Struktur und Benennungskonventionen der Design-Tokens](/images/cases/mckesson/tokens-scheme.png)
+
+### Tokenisierung und GitHub-Integration
+
+Alle UI-Komponenten wurden tokenisiert: Farben, Typografie, Abstände, Schatten, Eckenradien und komponentenspezifische Werte. Die Token-Pipeline wurde zur Versionsverwaltung mit GitHub verbunden, sodass Entwickler aktuelle Design-Tokens direkt in ihren Build-Prozess übernehmen konnten.
+
+<TokenPipeline
+  icon1="figma"
+  label1="Token-Konvention in Figma erstellt"
+  icon2="token-studio"
+  label2="JSON-Datei mit Token Studio erzeugt"
+  icon3="github"
+  label3="über eigene Erweiterung auf GitHub hochgeladen"
+  icon4="storybook"
+  label4="Ergebnis in Storybook angezeigt"
+/>
+
+### Prüfung in Echtzeit mit Storybook
+
+Wir integrierten Storybook als gemeinsame verbindliche Referenz für Design und Entwicklung. Dadurch entstand ein kontinuierlicher Design-QA-Prozess: Designer konnten die Komponentenimplementierung in Echtzeit prüfen, ohne vollständige Release-Builds der Anwendung abzuwarten.
+
+## Ergebnisse
+
+Wir lieferten ein Entwicklerwerkzeug für einfache UI-Änderungen, das den Aufwand für visuelle Aktualisierungen deutlich reduzierte. Für den Kunden entstand ein umfassendes Toolkit mit Dokumentation und Richtlinien. Die Übergabe vom Design an die Entwicklung wurde vereinfacht und eine zuvor nicht vorhandene, umfassende Dokumentation aufgebaut.
+
+![Komponentendokumentation und Richtlinien](/images/cases/mckesson/docs-g.png)
+
+![Komponentenbibliothek des Designsystems](/images/cases/mckesson/components.png)
+
+## Zentrale Erkenntnisse
+
+Ich erwarb fundierte Erfahrung in der Tokenisierung komplexer Bestandssysteme ohne vorherige Dokumentation und lernte bewährte Ansätze für den Einsatz von Storybook in großen Unternehmensanwendungen kennen. Besonders vertiefte ich die Zusammenarbeit zwischen Design und Entwicklung durch gemeinsame Arbeitsabläufe und automatisierte Pipelines.

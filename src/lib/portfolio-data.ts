@@ -1,13 +1,17 @@
+import type { Locale } from "@/i18n/routing";
+
+type Localized<T> = Record<Locale, T>;
+
 export interface ExperienceRole {
-  role: { en: string; ru: string };
-  period: { en: string; ru: string };
+  role: Localized<string>;
+  period: Localized<string>;
 }
 
 export interface Experience {
   company: string;
-  description: { en: string; ru: string };
+  description: Localized<string>;
   roles: ExperienceRole[];
-  tasks: { en: string[]; ru: string[] };
+  tasks: Localized<string[]>;
   logo?: string;
   current?: boolean;
 }
@@ -23,22 +27,30 @@ export const experience: Experience[] = [
     company: "JustTrack",
     logo: "/images/logos/justtrack.svg",
     description: {
+      de: "Plattform für Mobile Measurement und Marketingautomatisierung, die Attribution, Monetarisierungsanalysen und Kampagnenoptimierung vereint.",
       en: "Mobile measurement and marketing automation platform unifying attribution, monetization analytics, and campaign optimization.",
       ru: "Платформа мобильных измерений и автоматизации маркетинга: атрибуция, аналитика монетизации и оптимизация кампаний.",
     },
     roles: [
       {
         role: {
+          de: "Senior Product Designer",
           en: "Senior Product Designer",
           ru: "Senior Product designer",
         },
-        period: { en: "2025 – 2026", ru: "2025 – 2026" },
+        period: { de: "2025 – 2026", en: "2025 – 2026", ru: "2025 – 2026" },
       },
     ],
     tasks: {
+      de: [
+        "Ich entwickelte ein skalierbares Designsystem, das die Plattform konsistent, schnell und benutzerfreundlich macht und die Umsetzungszeit deutlich verkürzt. Bestehende UI- und UX-Muster wurden neu gestaltet, damit Nutzer Wachstum und Analysen in einem intuitiveren, aufgabenorientierten Ablauf steuern können.",
+        "Ich gestaltete „Smart Diagnostic Insights“, damit Nutzer Leistungsänderungen sofort verstehen. Einfache, datenbasierte Werkzeuge reduzieren die Überlastung durch Benachrichtigungen.",
+        "Ich integrierte Storybook in die Übergabe vom Design an die Entwicklung und reduzierte dadurch technische Altlasten und Abweichungen bei Komponenten.",
+        "Ich entwickelte Konzepte und Prototypen mit KI-Werkzeugen, die direkt in den Designprozess eingebunden sind.",
+      ],
       en: [
         "Built a scalable design system to keep the platform consistent, fast, easy-to-use and significantly reducing delivery time. Reimagined legacy UI and UX patterns, ensuring users can manage their growth and analytics from a more intuitive, task-oriented workflow.",
-        "Designed \"Smart Diagnostic Insights\" to help users understand performance changes instantly, reducing \"alert fatigue\" through simple, data-driven tools.",
+        'Designed "Smart Diagnostic Insights" to help users understand performance changes instantly, reducing "alert fatigue" through simple, data-driven tools.',
         "Integrated Storybook into the design-to-development handoff process, minimizing tech debt and component discrepancies.",
         "Designed concepts and prototypes utilizing AI tools integrated directly into the design pipeline.",
       ],
@@ -56,19 +68,28 @@ export const experience: Experience[] = [
     company: "Huawei",
     logo: "/images/logos/huawei.svg",
     description: {
+      de: "Technologieunternehmen mit Entwicklerwerkzeugen und Cloud-Infrastruktur.",
       en: "BigTech company providing developer tools and cloud infrastructure.",
       ru: "BigTech-компания, инструменты для разработчиков и облачная инфраструктура.",
     },
     roles: [
       {
         role: {
+          de: "Lead Designer",
           en: "Lead Designer",
           ru: "Lead designer",
         },
-        period: { en: "2024 — 2025", ru: "2024 — 2025" },
+        period: { de: "2024 — 2025", en: "2024 — 2025", ru: "2024 — 2025" },
       },
     ],
     tasks: {
+      de: [
+        "Ich leitete den gesamten Designzyklus von CodeArts IDE für Java und Python – von der Informationsarchitektur bis zur finalen Oberfläche.",
+        "Ich führte umfassendes Benchmarking und Wettbewerbsanalysen durch (VS Code, IntelliJ IDEA, Xcode), um bewährte Branchenmuster zu übernehmen.",
+        "Ich entwickelte eine skalierbare Designbibliothek mit Schwerpunkt auf Developer Experience (DX) und der Unterstützung komplexer technischer Szenarien.",
+        "Ich sorgte für kontinuierliche Verbesserungen der Benutzerfreundlichkeit und der Oberflächenleistung auf Basis von Nutzerfeedback und Kennzahlen.",
+        "Ich etablierte eine enge Zusammenarbeit mit Entwicklungsteams mit über 30 Entwicklern, um leistungsfähige Funktionen mit einfacher Bedienung zu verbinden.",
+      ],
       en: [
         "Led the full design cycle of CodeArts IDE for Java and Python — from information architecture to final UI.",
         "Conducted deep benchmarking and competitive analysis (VS Code, IntelliJ IDEA, Xcode) to adopt best industry patterns.",
@@ -89,19 +110,28 @@ export const experience: Experience[] = [
     company: "EPAM",
     logo: "/images/logos/epam.svg",
     description: {
+      de: "Globales Technologieunternehmen mit Schwerpunkt auf Softwareentwicklung, Informationsdiensten und Beratung.",
       en: "Global technology company specializing in software development, information services and consulting.",
       ru: "Глобальная технологическая компания, специализирующаяся на разработке ПО, информационных сервисах и консалтинге.",
     },
     roles: [
       {
         role: {
+          de: "Lead Designer",
           en: "Lead Designer",
           ru: "Lead designer",
         },
-        period: { en: "2022 — 2024", ru: "2022 — 2024" },
+        period: { de: "2022 — 2024", en: "2022 — 2024", ru: "2022 — 2024" },
       },
     ],
     tasks: {
+      de: [
+        "Ich leitete ein verteiltes Designteam und verantwortete die fachliche Entwicklung und das Mentoring der Teammitglieder.",
+        "Ich etablierte Prozesse für die enge Zusammenarbeit mit Entwicklern, Business Analysts und Stakeholdern auf Kundenseite.",
+        "Ich führte Design-Thinking-Methoden ein und optimierte interne Prozesse, um den Designreifegrad insgesamt zu erhöhen.",
+        "Ich baute das Designteam des Projekts auf, führte Fachinterviews und betreute das Onboarding.",
+        "Ich leitete die Weiterentwicklung und Pflege komplexer Designsysteme, um Konsistenz in großen Unternehmensökosystemen sicherzustellen.",
+      ],
       en: [
         "Managed a distributed design team, overseeing professional development and mentorship of specialists.",
         "Built processes for close collaboration with engineers, business analysts and client-side stakeholders.",
@@ -122,19 +152,28 @@ export const experience: Experience[] = [
     company: "EPAM",
     logo: "/images/logos/epam.svg",
     description: {
+      de: "Globales Technologieunternehmen mit Schwerpunkt auf Softwareentwicklung, Informationsdiensten und Beratung.",
       en: "Global technology company specializing in software development, information services and consulting.",
       ru: "Глобальная технологическая компания, специализирующаяся на разработке ПО, информационных сервисах и консалтинге.",
     },
     roles: [
       {
         role: {
+          de: "Senior UI/UX Designer",
           en: "Senior UI/UX Designer",
           ru: "Senior UI/UX Designer",
         },
-        period: { en: "2021 — 2022", ru: "2021 — 2022" },
+        period: { de: "2021 — 2022", en: "2021 — 2022", ru: "2021 — 2022" },
       },
     ],
     tasks: {
+      de: [
+        "Ich entwarf und skalierte Designsysteme mit einer fortgeschrittenen Architektur für Design-Tokens.",
+        "Ich verantwortete die Anforderungsaufnahme und die UX-Strategie und übersetzte geschäftliche Anforderungen in funktionale Spezifikationen.",
+        "Ich gestaltete komplexe Oberflächen für Unternehmensökosysteme und stark ausgelastete B2B-Produkte.",
+        "Ich führte Design-QA-Prozesse ein, prüfte Entwürfe systematisch und betreute Junior- und Mid-Level-Designer als Mentor.",
+        "Ich stellte inklusive Oberflächen gemäß den WCAG-Standards sicher und optimierte die Effizienz der Nutzerwege.",
+      ],
       en: [
         "Designed and scaled design systems using advanced design token architecture.",
         "Managed requirements gathering and UX strategy development, translating business requests into functional specifications.",
@@ -155,19 +194,27 @@ export const experience: Experience[] = [
     company: "TechWings",
     logo: "/images/logos/techwings.svg",
     description: {
+      de: "Design und Entwicklung von Webdiensten und mobilen Anwendungen für Immobilien, Finanzen, Bildung, Logistik und E-Commerce.",
       en: "Design and development of web services and mobile applications in real estate, finance, education, logistics, and e-commerce.",
       ru: "Агентство дизайна и разработки веб-сервисов и мобильных приложений в сферах недвижимости, финансов, образования, логистики и e-commerce.",
     },
     roles: [
       {
         role: {
+          de: "Senior Web Designer",
           en: "Senior Web Designer",
           ru: "Senior Web Designer",
         },
-        period: { en: "2019 — 2021", ru: "2019 — 2021" },
+        period: { de: "2019 — 2021", en: "2019 — 2021", ru: "2019 — 2021" },
       },
     ],
     tasks: {
+      de: [
+        "Ich verantwortete den gesamten Designzyklus von Web- und Mobilprodukten in den Bereichen Fintech, E-Commerce und Immobilien.",
+        "Ich übersetzte Geschäftsanforderungen in intuitive Oberflächen und gestaltete bestehende Lösungen anhand analysierter Nutzerbedürfnisse grundlegend neu.",
+        "Ich steuerte die Kommunikation mit Stakeholdern von der ersten Anforderungsaufnahme bis zur erfolgreichen Präsentation der Designkonzepte beim Kunden.",
+        "Ich begleitete die fachliche Entwicklung von Junior-Designern und sicherte die Qualität visueller und UX-Lösungen im Team.",
+      ],
       en: [
         "Responsible for the full end-to-end design cycle of web and mobile products in Fintech, E-commerce and Real Estate.",
         "Transformed business requirements into intuitive interfaces, conducting deep redesign of legacy solutions based on user needs analysis.",
@@ -191,12 +238,28 @@ export const tools: Tool[] = [
   { name: "Cinema 4D", category: "design", icon: "/images/tools/cinema4d.svg" },
   { name: "Claude", category: "ai", icon: "/images/tools/claude.svg" },
   { name: "Cursor", category: "ai", icon: "/images/tools/cursor.svg" },
-  { name: "Dovetail", category: "collaboration", icon: "/images/tools/dovetail.svg" },
+  {
+    name: "Dovetail",
+    category: "collaboration",
+    icon: "/images/tools/dovetail.svg",
+  },
   { name: "Figma", category: "design", icon: "/images/tools/figma.svg" },
   { name: "Framer", category: "prototyping", icon: "/images/tools/framer.svg" },
-  { name: "GitHub", category: "collaboration", icon: "/images/tools/github.svg" },
-  { name: "Illustrator", category: "design", icon: "/images/tools/illustrator.svg" },
-  { name: "Linear", category: "collaboration", icon: "/images/tools/linear.svg" },
+  {
+    name: "GitHub",
+    category: "collaboration",
+    icon: "/images/tools/github.svg",
+  },
+  {
+    name: "Illustrator",
+    category: "design",
+    icon: "/images/tools/illustrator.svg",
+  },
+  {
+    name: "Linear",
+    category: "collaboration",
+    icon: "/images/tools/linear.svg",
+  },
   { name: "Maze", category: "prototyping", icon: "/images/tools/maze.svg" },
   { name: "Midjourney", category: "ai", icon: "/images/tools/midjourney.svg" },
   { name: "Miro", category: "collaboration", icon: "/images/tools/miro.svg" },
@@ -204,46 +267,99 @@ export const tools: Tool[] = [
 ];
 
 export const clients: { name: string; logo: string; url: string }[] = [
-  { name: "ADNOC", logo: "/images/clients/adnoc.svg", url: "https://www.adnoc.ae/" },
-  { name: "Alcon", logo: "/images/clients/alcon.svg", url: "https://www.alcon.com/" },
-  { name: "Bacardi", logo: "/images/clients/bacardi.svg", url: "https://www.bacardi.com/" },
-  { name: "Coursera", logo: "/images/clients/coursera.svg", url: "https://coursera.org/" },
-  { name: "Goethe Institute", logo: "/images/clients/goethe.svg", url: "https://www.goethe.de/en/index.html" },
-  { name: "Google", logo: "/images/clients/google.svg", url: "https://abc.xyz/" },
-  { name: "McKesson", logo: "/images/clients/mckesson.svg", url: "https://www.mckesson.com/" },
-  { name: "Sonifi", logo: "/images/clients/sonifi.svg", url: "https://www.sonifi.com/" },
+  {
+    name: "ADNOC",
+    logo: "/images/clients/adnoc.svg",
+    url: "https://www.adnoc.ae/",
+  },
+  {
+    name: "Alcon",
+    logo: "/images/clients/alcon.svg",
+    url: "https://www.alcon.com/",
+  },
+  {
+    name: "Bacardi",
+    logo: "/images/clients/bacardi.svg",
+    url: "https://www.bacardi.com/",
+  },
+  {
+    name: "Coursera",
+    logo: "/images/clients/coursera.svg",
+    url: "https://coursera.org/",
+  },
+  {
+    name: "Goethe Institute",
+    logo: "/images/clients/goethe.svg",
+    url: "https://www.goethe.de/en/index.html",
+  },
+  {
+    name: "Google",
+    logo: "/images/clients/google.svg",
+    url: "https://abc.xyz/",
+  },
+  {
+    name: "McKesson",
+    logo: "/images/clients/mckesson.svg",
+    url: "https://www.mckesson.com/",
+  },
+  {
+    name: "Sonifi",
+    logo: "/images/clients/sonifi.svg",
+    url: "https://www.sonifi.com/",
+  },
 ];
 
 export const about = {
   name: {
+    de: "Konstantin Dolgov",
     en: "Konstantin Dolgov",
     ru: "Константин Долгов",
   },
   role: {
+    de: "Senior / Lead Product Designer",
     en: "Senior / Lead Product Designer",
     ru: "Senior / Lead продуктовый дизайнер",
   },
   location: {
+    de: "Hamburg, Deutschland",
     en: "Hamburg, Germany",
     ru: "Гамбург, Германия",
   },
   tagline: {
+    de: "Komplexe Unternehmensprodukte nutzerzentriert gestalten",
     en: "Designing complex enterprise products with user-centered approach",
     ru: "Проектирование сложных корпоративных продуктов с\u00A0человекоцентричным подходом",
   },
-  expertise: [
-    "AI-Driven",
-    "Design Operations",
-    "Design Systems",
-    "Enterprise SaaS / B2B",
-    "Mentoring",
-  ],
+  expertise: {
+    en: [
+      "AI-Driven",
+      "Design Operations",
+      "Design Systems",
+      "Enterprise SaaS / B2B",
+      "Mentoring",
+    ],
+    ru: [
+      "AI-Driven",
+      "Design Operations",
+      "Design Systems",
+      "Enterprise SaaS / B2B",
+      "Mentoring",
+    ],
+    de: [
+      "KI-gestützt",
+      "Design Operations",
+      "Designsysteme",
+      "Enterprise SaaS / B2B",
+      "Mentoring",
+    ],
+  },
   email: "kons.dolgov@gmail.com",
   telegram: "@KonstantinDol",
   linkedin: "https://www.linkedin.com/in/okodo",
   behance: "https://www.behance.net/keloid",
   cvLink: {
     ru: "https://drive.google.com/file/d/12yEiiAcqMRP82Nk6_LgrvRvf-4jw2F5h/view?usp=share_link",
+    de: "https://drive.google.com/drive/folders/1BydtE8dhFxW2jO0ZrR4FAYZEboO27Kbn?usp=sharing",
     en: "https://drive.google.com/drive/folders/1BydtE8dhFxW2jO0ZrR4FAYZEboO27Kbn?usp=sharing",
   },
 };

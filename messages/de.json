@@ -1,0 +1,90 @@
+{
+  "Header": {
+    "about": "Über mich",
+    "experience": "Erfahrung",
+    "work": "Projekte",
+    "contacts": "Kontakt",
+    "downloadCV": "Lebenslauf herunterladen",
+    "language": "Sprache auswählen"
+  },
+  "Hero": {
+    "viewCases": "Projekte ansehen",
+    "downloadCV": "Lebenslauf herunterladen"
+  },
+  "About": {
+    "title": "Über mich",
+    "bio": "Ich bin Produktdesigner mit Schwerpunkt auf komplexen B2B- und Enterprise-Ökosystemen. Seit über 9 Jahren verwandle ich datenintensive Produkte – von IDEs bis hin zu Risikomanagementsystemen – in intuitive Benutzeroberflächen. Ich verbinde fundierte UX-Forschung mit technischem Denken und KI-Technologien. Ich entwickle effektive Designprozesse und unterstütze Teams bei ihrer Weiterentwicklung.",
+    "experienceLabel": ".erfahrung",
+    "experienceValue": "6+ Jahre",
+    "locationLabel": ".standort",
+    "locationValue": "Hamburg",
+    "freelanceLabel": ".freelance",
+    "freelanceValue": "Verfügbar",
+    "helloLabel": ".hallo"
+  },
+  "Experience": {
+    "title": "Berufserfahrung"
+  },
+  "Tools": {
+    "title": "Tools"
+  },
+  "Clients": {
+    "title": "Kunden"
+  },
+  "Cases": {
+    "title": "Ausgewählte Projekte"
+  },
+  "Contacts": {
+    "title": "Kontakt",
+    "cta": "Schreib mir, wenn du ein Projekt besprechen oder mit mir zusammenarbeiten möchtest.",
+    "sendEmail": "E-Mail senden",
+    "downloadCV": "Lebenslauf herunterladen",
+    "email": "E-Mail",
+    "telegram": "Telegram",
+    "linkedin": "LinkedIn"
+  },
+  "Footer": {
+    "location": "Hamburg, Deutschland"
+  },
+  "CasePage": {
+    "backToProjects": "Zurück zu den Projekten",
+    "role": "Rolle",
+    "team": "Team",
+    "year": "Jahr",
+    "previousProject": "Vorheriges Projekt",
+    "nextProject": "Nächstes Projekt",
+    "getInTouch": "Interesse an einer Zusammenarbeit?",
+    "contactCta": "Lass uns über dein Projekt sprechen und herausfinden, wie ich helfen kann.",
+    "contactButton": "Kontakt aufnehmen",
+    "viewMoreProjects": "Weitere Projekte ansehen",
+    "ndaTitle": "Geschütztes Projekt",
+    "ndaDescription": "Dieses Projekt unterliegt einer Vertraulichkeitsvereinbarung. Bitte gib das Passwort ein, um die Fallstudie anzusehen.",
+    "ndaPasswordPlaceholder": "Passwort eingeben",
+    "ndaSubmit": "Freischalten",
+    "ndaError": "Falsches Passwort. Bitte versuche es erneut.",
+    "ndaBack": "Zurück",
+    "ndaBadge": "NDA",
+    "homePasswordTitle": "Eingeschränkter Zugang",
+    "homePasswordDescription": "Die meisten meiner Projekte unterliegen Vertraulichkeitsvereinbarungen. Für den Zugriff auf das vollständige Portfolio ist eine Anmeldung erforderlich.",
+    "homePasswordPlaceholder": "Passwort",
+    "homePasswordSubmit": "Anmelden",
+    "homePasswordError": "Falsches Passwort. Bitte versuche es erneut.",
+    "homePasswordNoPassword": "Ich habe kein Passwort",
+    "repository": "Repository",
+    "website": "Website"
+  },
+  "Common": {
+    "close": "Schließen",
+    "previousSlide": "Vorheriges Bild",
+    "nextSlide": "Nächstes Bild",
+    "scrollToTop": "Nach oben",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "showPassword": "Passwort anzeigen",
+    "hidePassword": "Passwort verbergen"
+  },
+  "Metadata": {
+    "title": "Konstantin Dolgov | Senior Product Designer",
+    "description": "Senior+ / Lead Product Designer aus Hamburg. Spezialisiert auf Enterprise UX, Designsysteme und komplexe B2B-Produkte für Kunden wie Huawei, Google und ADNOC."
+  }
+}

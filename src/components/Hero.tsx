@@ -1,5 +1,7 @@
 "use client";
 
+import type { Locale } from "@/i18n/routing";
+
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { ArrowDown, FileText } from "lucide-react";
@@ -30,7 +32,7 @@ const itemVariants = {
 
 export default function Hero() {
   const t = useTranslations("Hero");
-  const locale = useLocale() as "en" | "ru";
+  const locale = useLocale() as Locale;
 
   return (
     <section className="min-h-[90vh] flex flex-col justify-center px-6 md:px-8 lg:px-12 py-20">

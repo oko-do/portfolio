@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Lock, Eye, EyeOff } from "lucide-react";
@@ -33,6 +35,7 @@ export function HomePasswordOverlay({
   translations,
   children,
 }: HomePasswordOverlayProps) {
+  const common = useTranslations("Common");
   const [isLocked, setIsLocked] = useState(true);
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
@@ -122,6 +125,7 @@ export function HomePasswordOverlay({
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
+                    aria-label={common(showPassword ? "hidePassword" : "showPassword")}
                     className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
                     tabIndex={-1}
                   >

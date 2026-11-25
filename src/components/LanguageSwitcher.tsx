@@ -1,44 +1,41 @@
 "use client";
 
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/navigation";
+import { routing, type Locale } from "@/i18n/routing";
+
+const languageNames: Record<Locale, string> = {
+  en: "English",
+  ru: "Русский",
+  de: "Deutsch",
+};
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
+  const t = useTranslations("Header");
   const router = useRouter();
   const pathname = usePathname();
 
-  const switchLocale = (newLocale: "en" | "ru") => {
-    if (newLocale !== locale) {
-      router.replace(pathname, { locale: newLocale });
-    }
-  };
-
   return (
-    <div className="flex items-center gap-1 text-sm">
-      <button
-        onClick={() => switchLocale("en")}
-        className={`px-2 py-1 rounded transition-colors ${
-          locale === "en"
-            ? "text-foreground font-medium"
-            : "text-muted-foreground hover:text-primary"
-        }`}
-        aria-label="English"
-      >
-        EN
-      </button>
-      <span className="text-muted-foreground">/</span>
-      <button
-        onClick={() => switchLocale("ru")}
-        className={`px-2 py-1 rounded transition-colors ${
-          locale === "ru"
-            ? "text-foreground font-medium"
-            : "text-muted-foreground hover:text-primary"
-        }`}
-        aria-label="Russian"
-      >
-        RU
-      </button>
-    </div>
+    <select
+      aria-label={t("language")}
+      value={locale}
+      onChange={(event) => {
+        const newLocale = event.target.value as Locale;
+        if (newLocale !== locale) {
+          router.replace(
+            pathname + window.location.search + window.location.hash,
+            { locale: newLocale },
+          );
+        }
+      }}
+      className="rounded border border-border bg-background px-2 py-1 text-sm text-foreground focus-visible:outline-2 focus-visible:outline-primary"
+    >
+      {routing.locales.map((language) => (
+        <option key={language} value={language}>
+          {languageNames[language]}
+        </option>
+      ))}
+    </select>
   );
 }

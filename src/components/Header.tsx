@@ -16,6 +16,7 @@ const navItems = [
 
 export default function Header() {
   const t = useTranslations("Header");
+  const common = useTranslations("Common");
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
@@ -56,7 +57,7 @@ export default function Header() {
           {navItems.map((item) => (
             <a
               key={item.key}
-              href={item.href}
+              href={isHome ? item.href : `/${locale}/${item.href}`}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               {t(item.key)}
@@ -74,6 +75,8 @@ export default function Header() {
           variant="ghost"
           size="icon"
           className="md:hidden"
+          aria-label={common(mobileMenuOpen ? "closeMenu" : "openMenu")}
+          aria-expanded={mobileMenuOpen}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? (
@@ -91,7 +94,7 @@ export default function Header() {
             {navItems.map((item) => (
               <a
                 key={item.key}
-                href={item.href}
+                href={isHome ? item.href : `/${locale}/${item.href}`}
                 onClick={() => setMobileMenuOpen(false)}
                 className="block text-foreground hover:text-primary transition-colors py-2"
               >

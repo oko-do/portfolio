@@ -1,5 +1,7 @@
 "use client";
 
+import type { Locale } from "@/i18n/routing";
+
 import { useTranslations, useLocale } from "next-intl";
 import { Mail, Send, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,7 +10,7 @@ import { FadeIn } from "./FadeIn";
 
 export default function Contacts() {
   const t = useTranslations("Contacts");
-  const locale = useLocale() as "en" | "ru";
+  const locale = useLocale() as Locale;
 
   return (
     <section

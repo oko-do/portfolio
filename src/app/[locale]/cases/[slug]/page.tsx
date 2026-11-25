@@ -14,6 +14,7 @@ import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import { NdaModal } from "@/components/NdaModal";
 import type { Metadata } from "next";
+import { routing } from "@/i18n/routing";
 
 interface Props {
   params: Promise<{ slug: string; locale: string }>;
@@ -21,10 +22,9 @@ interface Props {
 
 export async function generateStaticParams() {
   const slugs = getProjectSlugs();
-  return slugs.flatMap((slug) => [
-    { slug, locale: "en" },
-    { slug, locale: "ru" },
-  ]);
+  return slugs.flatMap((slug) =>
+    routing.locales.map((locale) => ({ slug, locale })),
+  );
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
